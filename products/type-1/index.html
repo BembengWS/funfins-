@@ -17,19 +17,704 @@
 
   <title>FUNFINS+ | Wave / Notch Blade Only</title>
 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <!-- =====================================================
+       SECTION 04 VISUAL STYLE
+  ====================================================== -->
+
+  <style>
+
+    /* =====================================================
+       POWER SECTION
+    ====================================================== */
+
+    .powerSection {
+      position: relative;
+      overflow: hidden;
+      padding: 110px 36px 42px;
+      background:
+        radial-gradient(
+          circle at 75% 10%,
+          rgba(0, 210, 220, .10),
+          transparent 34%
+        ),
+        linear-gradient(
+          180deg,
+          #020b0f 0%,
+          #031217 48%,
+          #02090d 100%
+        );
+    }
+
+
+    .powerSection::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          ellipse at 80% 35%,
+          rgba(0, 220, 230, .12),
+          transparent 38%
+        );
+
+      pointer-events: none;
+    }
+
+
+    .powerSection::after {
+      content: "";
+      position: absolute;
+      width: 900px;
+      height: 900px;
+
+      right: -300px;
+      top: -300px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0, 225, 235, .08),
+          transparent 68%
+        );
+
+      pointer-events: none;
+    }
+
+
+
+    /* =====================================================
+       POWER HERO
+    ====================================================== */
+
+    .powerHero {
+      position: relative;
+      min-height: 430px;
+
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+
+      align-items: center;
+      gap: 30px;
+
+      max-width: 1500px;
+      margin: 0 auto 38px;
+
+      z-index: 2;
+    }
+
+
+    .powerHeroCopy {
+      position: relative;
+      z-index: 3;
+
+      padding-left: 2vw;
+    }
+
+
+    .powerEyebrow {
+      display: block;
+
+      margin-bottom: 22px;
+
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .42em;
+
+      color: rgba(255,255,255,.58);
+    }
+
+
+    .powerHero h2 {
+      margin: 0;
+
+      font-size: clamp(68px, 8vw, 145px);
+      line-height: .82;
+      letter-spacing: -.075em;
+
+      font-weight: 800;
+
+      color: #f4f7f7;
+    }
+
+
+    .powerHero h2 em {
+      color: #58e1e5;
+      font-style: normal;
+    }
+
+
+    .powerSubtitle {
+      max-width: 580px;
+
+      margin-top: 28px;
+
+      font-family: "DM Mono", monospace;
+      font-size: 12px;
+      line-height: 1.8;
+
+      letter-spacing: .16em;
+
+      color: rgba(255,255,255,.68);
+    }
+
+
+    .powerLine {
+      width: 62px;
+      height: 2px;
+
+      margin-top: 26px;
+
+      background: #55dfe4;
+    }
+
+
+
+    /* =====================================================
+       HERO PRODUCT VISUAL
+    ====================================================== */
+
+    .powerHeroVisual {
+      position: relative;
+
+      min-height: 430px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      border-radius: 2px;
+    }
+
+
+    .powerHeroVisual::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          115deg,
+          rgba(0,0,0,.92) 0%,
+          rgba(0,20,25,.45) 45%,
+          rgba(0,0,0,.08) 100%
+        );
+
+      z-index: 2;
+    }
+
+
+    .powerHeroVisual::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          ellipse at 70% 40%,
+          rgba(38,222,230,.25),
+          transparent 42%
+        );
+
+      mix-blend-mode: screen;
+
+      z-index: 3;
+    }
+
+
+    .powerHeroImage {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      opacity: .72;
+
+      filter:
+        saturate(.75)
+        contrast(1.12)
+        brightness(.65);
+
+      transform: scale(1.04);
+
+      transition: transform 1s ease;
+    }
+
+
+    .powerHeroVisual:hover .powerHeroImage {
+      transform: scale(1.08);
+    }
+
+
+    .powerHeroProduct {
+      position: relative;
+
+      z-index: 4;
+
+      width: 64%;
+
+      filter:
+        drop-shadow(0 25px 40px rgba(0,0,0,.7));
+
+      transform:
+        rotate(-5deg)
+        translateY(8px);
+
+      opacity: .94;
+    }
+
+
+    .powerHeroLabel {
+      position: absolute;
+
+      right: 30px;
+      bottom: 28px;
+
+      z-index: 5;
+
+      font-family: "DM Mono", monospace;
+      font-size: 9px;
+
+      letter-spacing: .34em;
+
+      color: rgba(255,255,255,.58);
+
+      writing-mode: vertical-rl;
+    }
+
+
+
+    /* =====================================================
+       FEATURE CARDS
+    ====================================================== */
+
+    .powerCards {
+      position: relative;
+      z-index: 5;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 20px;
+
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+
+    .powerCard {
+      position: relative;
+
+      min-height: 430px;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(95,220,225,.28);
+
+      border-radius: 10px;
+
+      background: #031014;
+
+      transition:
+        transform .5s ease,
+        border-color .5s ease;
+    }
+
+
+    .powerCard:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(95,220,225,.72);
+    }
+
+
+    .powerCard::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.05) 20%,
+          rgba(0,5,8,.30) 48%,
+          rgba(0,5,8,.94) 100%
+        );
+
+      z-index: 2;
+      pointer-events: none;
+    }
+
+
+    .powerCardImage {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: .82;
+
+      filter:
+        saturate(.86)
+        contrast(1.08)
+        brightness(.70);
+
+      transition:
+        transform .8s ease,
+        opacity .8s ease;
+    }
+
+
+    .powerCard:hover .powerCardImage {
+      transform: scale(1.055);
+
+      opacity: .92;
+    }
+
+
+    /* individual visual positioning */
+
+    .powerCard:nth-child(1)
+    .powerCardImage {
+      object-position: 52% center;
+    }
+
+
+    .powerCard:nth-child(2)
+    .powerCardImage {
+      object-position: 48% center;
+    }
+
+
+    .powerCard:nth-child(3)
+    .powerCardImage {
+      object-position: center center;
+    }
+
+
+
+    /* =====================================================
+       CARD CONTENT
+    ====================================================== */
+
+    .powerCardContent {
+      position: absolute;
+      inset: 0;
+
+      z-index: 4;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      padding: 28px;
+    }
+
+
+    .powerCardTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+
+    .powerNumber {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      font-family: "DM Mono", monospace;
+
+      font-size: 11px;
+      letter-spacing: .18em;
+
+      color: #54dfe5;
+    }
+
+
+    .powerNumber::after {
+      content: "";
+
+      width: 55px;
+      height: 1px;
+
+      background:
+        rgba(84,223,229,.35);
+    }
+
+
+    .powerCardMicro {
+      text-align: right;
+
+      font-family: "DM Mono", monospace;
+
+      font-size: 8px;
+      line-height: 1.8;
+
+      letter-spacing: .24em;
+
+      color:
+        rgba(255,255,255,.52);
+    }
+
+
+    .powerCardBottom {
+      max-width: 470px;
+    }
+
+
+    .powerCardLabel {
+      display: block;
+
+      margin-bottom: 9px;
+
+      font-family: "DM Mono", monospace;
+
+      font-size: 10px;
+
+      letter-spacing: .30em;
+
+      color:
+        rgba(255,255,255,.62);
+    }
+
+
+    .powerCard h3 {
+      margin: 0 0 14px;
+
+      font-size: clamp(29px, 3vw, 46px);
+
+      line-height: .95;
+
+      letter-spacing: -.045em;
+
+      color: #f4f7f7;
+    }
+
+
+    .powerCard p {
+      max-width: 430px;
+
+      margin: 0 0 24px;
+
+      font-size: 13px;
+      line-height: 1.75;
+
+      color:
+        rgba(255,255,255,.74);
+    }
+
+
+    .powerTag {
+      display: inline-block;
+
+      padding-top: 14px;
+
+      border-top:
+        1px solid rgba(84,223,229,.35);
+
+      font-family: "DM Mono", monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .20em;
+
+      color:
+        rgba(255,255,255,.72);
+    }
+
+
+
+    /* =====================================================
+       BOTTOM TAGLINE
+    ====================================================== */
+
+    .powerFooter {
+      position: relative;
+
+      z-index: 5;
+
+      max-width: 1500px;
+
+      margin: 28px auto 0;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 25px;
+
+      font-family: "DM Mono", monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .27em;
+
+      color:
+        rgba(255,255,255,.42);
+    }
+
+
+    .powerFooter strong {
+      color:
+        rgba(255,255,255,.66);
+
+      font-weight: 400;
+    }
+
+
+    .powerFooterRight {
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+    }
+
+
+    .powerFooterRight::before {
+      content: "";
+
+      width: 48px;
+      height: 2px;
+
+      background: #55dfe4;
+    }
+
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 900px) {
+
+      .powerSection {
+        padding:
+          80px 20px 32px;
+      }
+
+
+      .powerHero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        gap: 35px;
+      }
+
+
+      .powerHeroCopy {
+        padding-left: 0;
+      }
+
+
+      .powerHero h2 {
+        font-size:
+          clamp(60px, 16vw, 100px);
+      }
+
+
+      .powerHeroVisual {
+        min-height: 380px;
+      }
+
+
+      .powerHeroProduct {
+        width: 72%;
+      }
+
+
+      .powerCards {
+        grid-template-columns: 1fr;
+      }
+
+
+      .powerCard {
+        min-height: 470px;
+      }
+
+
+      .powerFooter {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        line-height: 1.8;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .powerHeroVisual {
+        min-height: 300px;
+      }
+
+
+      .powerHeroProduct {
+        width: 82%;
+      }
+
+
+      .powerCard {
+        min-height: 430px;
+      }
+
+
+      .powerCardContent {
+        padding: 22px;
+      }
+
+
+      .powerCard h3 {
+        font-size: 31px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
 
 <body>
+
 
 
 <!-- =========================================================
@@ -97,12 +782,15 @@
     <button
       class="waHeaderBtn"
       id="headerOrder"
+      type="button"
     >
       ORDER VIA WHATSAPP ↗
     </button>
 
+
     <button
       class="menu"
+      type="button"
       aria-label="Menu"
     >
       ☰
@@ -151,8 +839,8 @@
 
 
     <p>
-      Long-blade fiberglass fins built for responsive movement,
-      direct power transfer and control beneath the surface.
+      Precision long-blade fiberglass for divers who want
+      responsive movement, direct power and controlled propulsion.
     </p>
 
 
@@ -184,14 +872,12 @@
 >
 
 
-  <!-- PRODUCT IMAGE -->
-
   <div class="productPhoto">
 
     <img
       id="mainProductImage"
       src="funfins-type1-red-ferrari.jpg"
-      alt="FUNFINS+ Wave / Notch Blade Only"
+      alt="FUNFINS+ Wave / Notch Red Ferrari"
     >
 
 
@@ -202,8 +888,6 @@
   </div>
 
 
-
-  <!-- PRODUCT INFORMATION -->
 
   <div class="productCopy">
 
@@ -233,14 +917,10 @@
 
 
 
-    <!-- =====================================================
-         VARIANTS
-    ====================================================== -->
+    <!-- COLOR -->
 
     <div class="variantBox">
 
-
-      <!-- COLOR -->
 
       <div class="variantGroup colorGroup">
 
@@ -264,6 +944,7 @@
             class="colorOption active"
             data-color="Red Ferrari"
             data-image="funfins-type1-red-ferrari.jpg"
+            type="button"
           >
 
             <img
@@ -283,6 +964,7 @@
             class="colorOption"
             data-color="Black"
             data-image="funfins-type1-black.jpg"
+            type="button"
           >
 
             <img
@@ -302,6 +984,7 @@
             class="colorOption"
             data-color="Ocean Blue"
             data-image="funfins-type1-ocean-blue.jpg"
+            type="button"
           >
 
             <img
@@ -321,6 +1004,7 @@
             class="colorOption"
             data-color="Forest Green"
             data-image="funfins-type1-forest-green.jpg"
+            type="button"
           >
 
             <img
@@ -340,6 +1024,7 @@
             class="colorOption"
             data-color="Pearl White"
             data-image="funfins-type1-pearl-white.jpg"
+            type="button"
           >
 
             <img
@@ -359,6 +1044,7 @@
             class="colorOption"
             data-color="Sun Yellow"
             data-image="funfins-type1-sun-yellow.jpg"
+            type="button"
           >
 
             <img
@@ -403,6 +1089,7 @@
             class="variantOption active"
             data-rail="Water Rails"
             data-price="1500000"
+            type="button"
           >
 
             WATER RAILS
@@ -419,6 +1106,7 @@
             class="variantOption"
             data-rail="U-List"
             data-price="1000000"
+            type="button"
           >
 
             U-LIST
@@ -459,6 +1147,7 @@
           <button
             class="stiffnessOption active"
             data-stiffness="Medium"
+            type="button"
           >
             MEDIUM
           </button>
@@ -467,6 +1156,7 @@
           <button
             class="stiffnessOption"
             data-stiffness="Soft"
+            type="button"
           >
             SOFT
           </button>
@@ -481,9 +1171,7 @@
 
 
 
-    <!-- =====================================================
-         SPECS
-    ====================================================== -->
+    <!-- SPECS -->
 
     <div class="specGrid">
 
@@ -501,7 +1189,6 @@
       </div>
 
 
-
       <div>
 
         <small>
@@ -513,7 +1200,6 @@
         </b>
 
       </div>
-
 
 
       <div>
@@ -529,7 +1215,6 @@
       </div>
 
 
-
       <div>
 
         <small>
@@ -543,7 +1228,6 @@
       </div>
 
 
-
       <div>
 
         <small>
@@ -555,7 +1239,6 @@
         </b>
 
       </div>
-
 
 
       <div>
@@ -575,9 +1258,7 @@
 
 
 
-    <!-- =====================================================
-         BUY
-    ====================================================== -->
+    <!-- BUY -->
 
     <div class="buyRow">
 
@@ -589,6 +1270,7 @@
       <button
         class="buyBtn"
         id="checkoutBtn"
+        type="button"
       >
         CHECKOUT VIA WHATSAPP ↗
       </button>
@@ -603,7 +1285,7 @@
 
 
 <!-- =========================================================
-     PRODUCT DETAILS
+     DETAILS
 ========================================================= -->
 
 <section
@@ -659,7 +1341,7 @@
 
 
 <!-- =========================================================
-     FIN SHAPE / FUNCTION
+     FIN SHAPE
 ========================================================= -->
 
 <section class="shapeDetails light">
@@ -668,7 +1350,6 @@
   <small>
     03 — FIN SHAPE / FUNCTION &amp; ADVANTAGES
   </small>
-
 
 
   <div class="shapeIntro">
@@ -691,8 +1372,6 @@
 
   <div class="shapeGrid">
 
-
-    <!-- CHARACTERISTICS -->
 
     <div class="shapeBlock">
 
@@ -725,8 +1404,6 @@
     </div>
 
 
-
-    <!-- ADVANTAGES -->
 
     <div class="shapeBlock">
 
@@ -762,8 +1439,6 @@
 
 
 
-  <!-- POTENTIAL DRAWBACK -->
-
   <div class="shapeNote">
 
     <span>
@@ -780,8 +1455,6 @@
   </div>
 
 
-
-  <!-- POSITIONING -->
 
   <div class="shapePositioning">
 
@@ -802,8 +1475,6 @@
   </div>
 
 
-
-  <!-- IMPORTANT NOTE -->
 
   <div class="importantNote">
 
@@ -828,8 +1499,6 @@
   </div>
 
 
-
-  <!-- PRODUCT POSITIONING -->
 
   <div class="productPositioning">
 
@@ -940,17 +1609,22 @@
      04 — FEEL THE POWER
 ========================================================= -->
 
-<section class="section philosophySection">
+<section class="powerSection">
 
 
-  <div class="head">
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <div class="powerHero">
 
 
-    <div>
+    <div class="powerHeroCopy">
 
-      <small>
-        04 — THE PHILOSOPHY
-      </small>
+
+      <span class="powerEyebrow">
+        DESIGNED FOR A DEEPER YOU
+      </span>
 
 
       <h2>
@@ -960,134 +1634,43 @@
       </h2>
 
 
-      <p class="philosophyLead">
-        BUILT TO RESPOND. DESIGNED TO MOVE.
-      </p>
-
-    </div>
-
-
-  </div>
-
-
-
-  <div class="philosophy">
-
-
-    <!-- =====================================================
-         01 — CONTROL
-    ====================================================== -->
-
-    <div class="philosophyCard">
-
-
-      <b>
-        01
-      </b>
-
-
-      <span>
-        CONTROL
-      </span>
-
-
-      <h3>
-        RESPONSIVE FLEX
-      </h3>
-
-
-      <p>
-        A dynamic blade profile designed for quick response
-        and precise control. Delivers a direct connection
-        between every kick and every movement.
+      <p class="powerSubtitle">
+        BUILT TO RESPOND.
+        DESIGNED TO MOVE.
       </p>
 
 
-      <small>
-        QUICK RESPONSE
-        •
-        PRECISE CONTROL
-      </small>
+      <div class="powerLine"></div>
 
 
     </div>
 
 
 
-    <!-- =====================================================
-         02 — EFFICIENCY
-    ====================================================== -->
+    <!-- MAIN PRODUCT VISUAL -->
 
-    <div class="philosophyCard">
+    <div class="powerHeroVisual">
 
 
-      <b>
-        02
-      </b>
+      <img
+        class="powerHeroImage"
+        src="funfins-type1-ocean-blue.jpg"
+        alt="FUNFINS+ Wave / Notch Ocean Blue blade"
+      >
 
 
-      <span>
-        EFFICIENCY
+      <img
+        class="powerHeroProduct"
+        src="funfins-type1-red-ferrari.jpg"
+        alt="FUNFINS+ Wave / Notch Red Ferrari blade"
+      >
+
+
+      <span class="powerHeroLabel">
+        WAVE / NOTCH
+        &nbsp; — &nbsp;
+        BLADE SERIES
       </span>
-
-
-      <h3>
-        POWERFUL PROPULSION
-      </h3>
-
-
-      <p>
-        Engineered to transfer your kicking energy efficiently
-        into forward thrust. Built to help you move with power
-        while maintaining smooth, controlled movement.
-      </p>
-
-
-      <small>
-        MORE THRUST
-        •
-        LESS WASTED ENERGY
-      </small>
-
-
-    </div>
-
-
-
-    <!-- =====================================================
-         03 — CHARACTER
-    ====================================================== -->
-
-    <div class="philosophyCard">
-
-
-      <b>
-        03
-      </b>
-
-
-      <span>
-        CHARACTER
-      </span>
-
-
-      <h3>
-        BOLD BY DESIGN
-      </h3>
-
-
-      <p>
-        The distinctive Notch profile creates a bold visual
-        identity while delivering an active and dynamic
-        kicking feel.
-      </p>
-
-
-      <small>
-        DISTINCTIVE SHAPE
-        •
-        DYNAMIC PERFORMANCE
-      </small>
 
 
     </div>
@@ -1097,24 +1680,257 @@
 
 
 
-  <!-- =====================================================
+  <!-- =======================================================
+       THREE VISUAL CARDS
+  ======================================================== -->
+
+  <div class="powerCards">
+
+
+    <!-- =====================================================
+         01 CONTROL
+    ====================================================== -->
+
+    <article class="powerCard">
+
+
+      <img
+        class="powerCardImage"
+        src="funfins-type1-black.jpg"
+        alt="FUNFINS+ Wave / Notch Black blade"
+      >
+
+
+      <div class="powerCardContent">
+
+
+        <div class="powerCardTop">
+
+
+          <div class="powerNumber">
+            01
+          </div>
+
+
+          <div class="powerCardMicro">
+            QUICK RESPONSE
+            <br>
+            PRECISE CONTROL
+          </div>
+
+
+        </div>
+
+
+        <div class="powerCardBottom">
+
+
+          <span class="powerCardLabel">
+            CONTROL
+          </span>
+
+
+          <h3>
+            RESPONSIVE
+            <br>
+            FLEX
+          </h3>
+
+
+          <p>
+            A dynamic blade profile designed for quick response
+            and precise control. Delivers a direct connection
+            between every kick and every movement.
+          </p>
+
+
+          <span class="powerTag">
+            QUICK RESPONSE
+            •
+            PRECISE CONTROL
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         02 EFFICIENCY
+    ====================================================== -->
+
+    <article class="powerCard">
+
+
+      <img
+        class="powerCardImage"
+        src="funfins-type1-ocean-blue.jpg"
+        alt="FUNFINS+ Wave / Notch Ocean Blue blade"
+      >
+
+
+      <div class="powerCardContent">
+
+
+        <div class="powerCardTop">
+
+
+          <div class="powerNumber">
+            02
+          </div>
+
+
+          <div class="powerCardMicro">
+            MORE THRUST
+            <br>
+            LESS WASTED ENERGY
+          </div>
+
+
+        </div>
+
+
+        <div class="powerCardBottom">
+
+
+          <span class="powerCardLabel">
+            EFFICIENCY
+          </span>
+
+
+          <h3>
+            POWERFUL
+            <br>
+            PROPULSION
+          </h3>
+
+
+          <p>
+            Engineered to transfer your kicking energy efficiently
+            into forward thrust. Built to help you move with power
+            while maintaining smooth, controlled movement.
+          </p>
+
+
+          <span class="powerTag">
+            MORE THRUST
+            •
+            LESS WASTED ENERGY
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         03 CHARACTER
+    ====================================================== -->
+
+    <article class="powerCard">
+
+
+      <img
+        class="powerCardImage"
+        src="funfins-type1-red-ferrari.jpg"
+        alt="FUNFINS+ Wave / Notch Red Ferrari blade"
+      >
+
+
+      <div class="powerCardContent">
+
+
+        <div class="powerCardTop">
+
+
+          <div class="powerNumber">
+            03
+          </div>
+
+
+          <div class="powerCardMicro">
+            DISTINCTIVE SHAPE
+            <br>
+            DYNAMIC PERFORMANCE
+          </div>
+
+
+        </div>
+
+
+        <div class="powerCardBottom">
+
+
+          <span class="powerCardLabel">
+            CHARACTER
+          </span>
+
+
+          <h3>
+            BOLD
+            <br>
+            BY DESIGN
+          </h3>
+
+
+          <p>
+            The distinctive Notch profile creates a bold visual
+            identity while delivering an active and dynamic
+            kicking feel.
+          </p>
+
+
+          <span class="powerTag">
+            DISTINCTIVE SHAPE
+            •
+            DYNAMIC PERFORMANCE
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+
+  <!-- =======================================================
        BOTTOM TAGLINE
-  ====================================================== -->
+  ======================================================== -->
 
-  <div class="philosophyFooter">
-
-
-    <span>
-      RESPOND FASTER
-      &nbsp; / &nbsp;
-      MOVE STRONGER
-    </span>
+  <div class="powerFooter">
 
 
     <strong>
-      NOTCH BLADE —
-      BUILT FOR EVERY KICK.
+      RESPOND FASTER
+      &nbsp; / &nbsp;
+      MOVE STRONGER
     </strong>
+
+
+    <div class="powerFooterRight">
+
+      <span>
+        NOTCH BLADE —
+        BUILT FOR EVERY KICK.
+      </span>
+
+    </div>
 
 
   </div>
@@ -1277,7 +2093,8 @@
     <button
       class="orderClose"
       id="orderClose"
-      aria-label="Close order window"
+      type="button"
+      aria-label="Close order"
     >
       ×
     </button>
@@ -1304,7 +2121,7 @@
         <img
           id="summaryImage"
           src="funfins-type1-red-ferrari.jpg"
-          alt="FUNFINS+ Wave / Notch Blade Only"
+          alt="FUNFINS+ Wave / Notch blade"
         >
 
       </div>
