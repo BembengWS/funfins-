@@ -1,643 +1,711 @@
-const product = {
-  name: "FUNFINS+ Bulb / Rounded-Lobed Blade Only",
+/* =========================================================
+   FUNFINS+ TYPE 3
+   BULB / ROUNDED-LOBED
+   DIRECT WHATSAPP CHECKOUT
+========================================================= */
 
-  image: "funfins-type3-red-ferrari.jpg",
+const PRODUCT_NAME = "FUNFINS+ Bulb / Rounded-Lobed Blade Only";
 
-  colors: [
-    {
-      name: "Red Ferrari",
-      image: "funfins-type3-red-ferrari.jpg"
-    },
-    {
-      name: "Black",
-      image: "funfins-type3-black.jpg"
-    },
-    {
-      name: "Ocean Blue",
-      image: "funfins-type3-ocean-blue.jpg"
-    },
-    {
-      name: "Forest Green",
-      image: "funfins-type3-forest-green.jpg"
-    },
-    {
-      name: "Pearl White",
-      image: "funfins-type3-pearl-white.jpg"
-    },
-    {
-      name: "Sun Yellow",
-      image: "funfins-type3-sun-yellow.jpg"
-    }
-  ],
+const WHATSAPP_NUMBER = "6289638142670";
 
-  rails: {
-    "Water Rails": 1500000,
-    "U-List": 1000000
+const colors = {
+  "Red Ferrari": "funfins-type3-red-ferrari.jpg",
+  "Black": "funfins-type3-black.jpg",
+  "Ocean Blue": "funfins-type3-ocean-blue.jpg",
+  "Forest Green": "funfins-type3-forest-green.jpg",
+  "Pearl White": "funfins-type3-pearl-white.jpg",
+  "Sun Yellow": "funfins-type3-sun-yellow.jpg"
+};
+
+const railPrices = {
+  "Water Rails": 1500000,
+  "U-List": 1000000
+};
+
+let selectedColor = "Red Ferrari";
+let selectedRail = "Water Rails";
+let selectedStiffness = "Medium";
+let quantity = 1;
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function $(selector) {
+  return document.querySelector(selector);
+}
+
+function $$(selector) {
+  return document.querySelectorAll(selector);
+}
+
+function formatPrice(value) {
+  return "RP " + Number(value).toLocaleString("id-ID");
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+window.addEventListener("load", function () {
+
+  const loader = $(".loader");
+
+  if (loader) {
+    setTimeout(function () {
+      loader.classList.add("done");
+    }, 700);
   }
-};
+
+});
 
 
-let selected = {
-  rail: "Water Rails",
-  stiffness: "Medium",
-  color: "Red Ferrari",
-  colorImage: "funfins-type3-red-ferrari.jpg",
-  qty: 1
-};
+/* =========================================================
+   COLOR
+========================================================= */
 
+function updateColor() {
 
-const $ = selector => document.querySelector(selector);
+  const image = colors[selectedColor];
 
-const $$ = selector => document.querySelectorAll(selector);
+  const mainImage = $("#mainImage");
+  const featureImage = $("#featureImage");
 
+  if (mainImage && image) {
+    mainImage.style.opacity = "0";
 
-function money(number) {
-  return "Rp " + number.toLocaleString("id-ID");
+    setTimeout(function () {
+      mainImage.src = image;
+      mainImage.alt = PRODUCT_NAME + " - " + selectedColor;
+      mainImage.style.opacity = "1";
+    }, 120);
+  }
+
+  if (featureImage && image) {
+    featureImage.style.opacity = "0";
+
+    setTimeout(function () {
+      featureImage.src = image;
+      featureImage.alt = PRODUCT_NAME + " - " + selectedColor;
+      featureImage.style.opacity = "1";
+    }, 120);
+  }
+
+  $$(".colorOption").forEach(function (button) {
+
+    button.classList.toggle(
+      "active",
+      button.dataset.color === selectedColor
+    );
+
+  });
+
+  updateSummary();
+
 }
 
 
-function selectedPrice() {
-  return product.rails[selected.rail];
+/* =========================================================
+   RAIL
+========================================================= */
+
+function updateRail() {
+
+  $$(".railOption").forEach(function (button) {
+
+    button.classList.toggle(
+      "active",
+      button.dataset.rail === selectedRail
+    );
+
+  });
+
+  updatePrice();
+  updateSummary();
+
 }
 
 
-/* =====================================================
-   UPDATE PRICE
-===================================================== */
+/* =========================================================
+   STIFFNESS
+========================================================= */
 
-function updateProductPrice() {
+function updateStiffness() {
 
-  const price = money(selectedPrice());
+  $$(".stiffnessOption").forEach(function (button) {
+
+    button.classList.toggle(
+      "active",
+      button.dataset.stiffness === selectedStiffness
+    );
+
+  });
+
+  updateSummary();
+
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+function updatePrice() {
+
+  const price = railPrices[selectedRail] || 0;
 
   const priceElement = $("#price");
 
   if (priceElement) {
-    priceElement.textContent = price;
+    priceElement.textContent = formatPrice(price);
   }
 
-  const totalPrice = $("#totalPrice");
-
-  if (totalPrice) {
-    totalPrice.textContent =
-      money(selectedPrice() * selected.qty);
-  }
 }
 
 
-/* =====================================================
-   COLOR
-===================================================== */
-
-function updateColor(button) {
-
-  $$(".colorOption").forEach(item => {
-    item.classList.remove("active");
-  });
-
-  button.classList.add("active");
-
-  selected.color = button.dataset.color;
-  selected.colorImage = button.dataset.image;
-
-
-  const mainImage = $("#mainImage");
-
-  const featureImage = $("#featureImage");
-
-
-  if (mainImage) {
-
-    mainImage.style.opacity = "0.35";
-
-    setTimeout(() => {
-
-      mainImage.src = selected.colorImage;
-
-      mainImage.alt =
-        "FUNFINS+ Bulb / Rounded-Lobed Blade Only — " +
-        selected.color;
-
-      mainImage.style.opacity = "1";
-
-    }, 120);
-
-  }
-
-
-  if (featureImage) {
-
-    featureImage.style.opacity = "0.35";
-
-    setTimeout(() => {
-
-      featureImage.src = selected.colorImage;
-
-      featureImage.alt =
-        "FUNFINS+ Bulb / Rounded-Lobed Blade Only — " +
-        selected.color;
-
-      featureImage.style.opacity = "1";
-
-    }, 120);
-
-  }
-
-
-  updateSummary();
-}
-
-
-/* =====================================================
-   RAIL
-===================================================== */
-
-function updateRail(button) {
-
-  $$(".railOption").forEach(item => {
-    item.classList.remove("active");
-  });
-
-  button.classList.add("active");
-
-  selected.rail = button.dataset.rail;
-
-  updateProductPrice();
-
-  updateSummary();
-}
-
-
-/* =====================================================
-   STIFFNESS
-===================================================== */
-
-function updateStiffness(button) {
-
-  $$(".stiffnessOption").forEach(item => {
-    item.classList.remove("active");
-  });
-
-  button.classList.add("active");
-
-  selected.stiffness =
-    button.dataset.stiffness;
-
-  updateSummary();
-}
-
-
-/* =====================================================
+/* =========================================================
    SUMMARY
-===================================================== */
+========================================================= */
 
 function updateSummary() {
 
   const summaryColor = $("#summaryColor");
-
   const summaryRail = $("#summaryRail");
-
-  const summaryStiffness =
-    $("#summaryStiffness");
-
-  const quantity = $("#quantity");
-
+  const summaryStiffness = $("#summaryStiffness");
+  const quantityElement = $("#quantity");
   const totalPrice = $("#totalPrice");
 
-
   if (summaryColor) {
-    summaryColor.textContent =
-      selected.color.toUpperCase();
+    summaryColor.textContent = selectedColor.toUpperCase();
   }
-
 
   if (summaryRail) {
-    summaryRail.textContent =
-      selected.rail.toUpperCase();
+    summaryRail.textContent = selectedRail.toUpperCase();
   }
-
 
   if (summaryStiffness) {
-    summaryStiffness.textContent =
-      selected.stiffness.toUpperCase();
+    summaryStiffness.textContent = selectedStiffness.toUpperCase();
   }
 
-
-  if (quantity) {
-    quantity.textContent =
-      selected.qty;
+  if (quantityElement) {
+    quantityElement.textContent = quantity;
   }
-
 
   if (totalPrice) {
-    totalPrice.textContent =
-      money(
-        selectedPrice() *
-        selected.qty
-      );
+
+    const price =
+      (railPrices[selectedRail] || 0) *
+      quantity;
+
+    totalPrice.textContent = formatPrice(price);
   }
 
-
-  updateProductPrice();
 }
 
 
-/* =====================================================
-   OPEN ORDER
-===================================================== */
+/* =========================================================
+   OPEN ORDER MODAL
+========================================================= */
 
-function openOrder() {
-
-  updateSummary();
+function openOrderModal() {
 
   const modal = $("#orderModal");
 
-  if (!modal) return;
+  if (!modal) {
+    console.error("FUNFINS ERROR: #orderModal tidak ditemukan.");
+    return;
+  }
+
+  updateSummary();
 
   modal.classList.add("open");
 
   document.body.classList.add("modalOpen");
+
 }
 
 
-/* =====================================================
-   CLOSE ORDER
-===================================================== */
+/* =========================================================
+   CLOSE ORDER MODAL
+========================================================= */
 
-function closeOrder() {
+function closeOrderModal() {
 
   const modal = $("#orderModal");
 
-  if (!modal) return;
+  if (!modal) {
+    return;
+  }
 
   modal.classList.remove("open");
 
   document.body.classList.remove("modalOpen");
+
 }
 
 
-/* =====================================================
-   QUANTITY
-===================================================== */
-
-function changeQty(amount) {
-
-  selected.qty =
-    Math.max(
-      1,
-      selected.qty + amount
-    );
-
-  updateSummary();
-}
-
-
-/* =====================================================
-   CONFIRM ORDER
-===================================================== */
-
-function confirmOrder() {
-
-  const total =
-    selectedPrice() *
-    selected.qty;
-
-
-  const customerName =
-    $("#customerName")?.value.trim() || "-";
-
-
-  const customerAddress =
-    $("#customerAddress")?.value.trim() || "-";
-
-
-  const customerNotes =
-    $("#customerNotes")?.value.trim() || "-";
-
-
-  const message =
-
-    "Halo FUNFINS,%0A%0A" +
-
-    "*Saya ingin melakukan pemesanan:*%0A%0A" +
-
-    "Produk: " +
-    encodeURIComponent(product.name) +
-    "%0A" +
-
-    "Color: " +
-    encodeURIComponent(selected.color) +
-    "%0A" +
-
-    "Rail: " +
-    encodeURIComponent(selected.rail) +
-    "%0A" +
-
-    "Stiffness: " +
-    encodeURIComponent(selected.stiffness) +
-    "%0A" +
-
-    "Quantity: " +
-    selected.qty +
-    "%0A" +
-
-    "Harga/unit: " +
-    encodeURIComponent(
-      money(selectedPrice())
-    ) +
-    "%0A" +
-
-    "Total: " +
-    encodeURIComponent(
-      money(total)
-    ) +
-
-    "%0A%0A" +
-
-    "*Data Pemesan*%0A%0A" +
-
-    "Nama: " +
-    encodeURIComponent(customerName) +
-    "%0A" +
-
-    "Alamat: " +
-    encodeURIComponent(customerAddress) +
-    "%0A" +
-
-    "Catatan: " +
-    encodeURIComponent(customerNotes);
-
-
-  window.open(
-    "https://wa.me/6289638142670?text=" +
-    message,
-    "_blank"
-  );
-}
-
-
-/* =====================================================
+/* =========================================================
    COLOR EVENTS
-===================================================== */
+========================================================= */
 
-$$(".colorOption").forEach(button => {
+$$(".colorOption").forEach(function (button) {
 
-  button.addEventListener(
-    "click",
-    () => updateColor(button)
-  );
+  button.addEventListener("click", function () {
+
+    const color = this.dataset.color;
+
+    if (!color || !colors[color]) {
+      return;
+    }
+
+    selectedColor = color;
+
+    updateColor();
+
+  });
 
 });
 
 
-/* =====================================================
+/* =========================================================
    RAIL EVENTS
-===================================================== */
+========================================================= */
 
-$$(".railOption").forEach(button => {
+$$(".railOption").forEach(function (button) {
 
-  button.addEventListener(
-    "click",
-    () => updateRail(button)
-  );
+  button.addEventListener("click", function () {
+
+    const rail = this.dataset.rail;
+
+    if (!rail || railPrices[rail] === undefined) {
+      return;
+    }
+
+    selectedRail = rail;
+
+    updateRail();
+
+  });
 
 });
 
 
-/* =====================================================
+/* =========================================================
    STIFFNESS EVENTS
-===================================================== */
+========================================================= */
 
-$$(".stiffnessOption").forEach(button => {
+$$(".stiffnessOption").forEach(function (button) {
 
-  button.addEventListener(
-    "click",
-    () => updateStiffness(button)
-  );
+  button.addEventListener("click", function () {
+
+    const stiffness = this.dataset.stiffness;
+
+    if (!stiffness) {
+      return;
+    }
+
+    selectedStiffness = stiffness;
+
+    updateStiffness();
+
+  });
 
 });
 
 
-/* =====================================================
-   CHECKOUT BUTTON
-===================================================== */
+/* =========================================================
+   BUY BUTTON
+========================================================= */
 
 const buyBtn = $("#buyBtn");
 
 if (buyBtn) {
 
-  buyBtn.addEventListener(
-    "click",
-    openOrder
-  );
+  buyBtn.addEventListener("click", function () {
+
+    openOrderModal();
+
+  });
 
 }
 
 
-const bottomBuyBtn =
-  $("#bottomBuyBtn");
+/* =========================================================
+   BOTTOM BUY BUTTON
+========================================================= */
+
+const bottomBuyBtn = $("#bottomBuyBtn");
 
 if (bottomBuyBtn) {
 
-  bottomBuyBtn.addEventListener(
-    "click",
-    openOrder
-  );
+  bottomBuyBtn.addEventListener("click", function () {
+
+    openOrderModal();
+
+  });
 
 }
 
 
-/* =====================================================
-   MODAL CLOSE
-===================================================== */
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
 
-const closeModal =
-  $("#closeModal");
+const closeModal = $("#closeModal");
 
 if (closeModal) {
 
-  closeModal.addEventListener(
-    "click",
-    closeOrder
-  );
+  closeModal.addEventListener("click", function () {
+
+    closeOrderModal();
+
+  });
 
 }
 
 
-/* =====================================================
-   QUANTITY BUTTONS
-===================================================== */
-
-const minusQty =
-  $("#minusQty");
-
-if (minusQty) {
-
-  minusQty.addEventListener(
-    "click",
-    () => changeQty(-1)
-  );
-
-}
-
-
-const plusQty =
-  $("#plusQty");
-
-if (plusQty) {
-
-  plusQty.addEventListener(
-    "click",
-    () => changeQty(1)
-  );
-
-}
-
-
-/* =====================================================
-   CONFIRM
-===================================================== */
-
-const confirmButton =
-  $("#confirmOrder");
-
-if (confirmButton) {
-
-  confirmButton.addEventListener(
-    "click",
-    confirmOrder
-  );
-
-}
-
-
-/* =====================================================
+/* =========================================================
    CLICK OUTSIDE MODAL
-===================================================== */
+========================================================= */
 
-const orderModal =
-  $("#orderModal");
+const orderModal = $("#orderModal");
 
 if (orderModal) {
 
-  orderModal.addEventListener(
-    "click",
-    event => {
+  orderModal.addEventListener("click", function (event) {
 
-      if (
-        event.target ===
-        orderModal
-      ) {
-
-        closeOrder();
-
-      }
-
+    if (event.target === orderModal) {
+      closeOrderModal();
     }
-  );
+
+  });
 
 }
 
 
-/* =====================================================
-   ESC KEY
-===================================================== */
+/* =========================================================
+   ESCAPE
+========================================================= */
 
-addEventListener(
-  "keydown",
-  event => {
+document.addEventListener("keydown", function (event) {
 
-    if (event.key === "Escape") {
+  if (event.key === "Escape") {
 
-      closeOrder();
+    closeOrderModal();
 
+    const search = $("#search");
+
+    if (search) {
+      search.classList.remove("open");
     }
 
   }
-);
+
+});
 
 
-/* =====================================================
-   SCROLL PROGRESS
-===================================================== */
+/* =========================================================
+   QUANTITY MINUS
+========================================================= */
 
-addEventListener(
-  "scroll",
-  () => {
+const minusQty = $("#minusQty");
 
-    const max =
-      document.documentElement
-        .scrollHeight -
-      innerHeight;
+if (minusQty) {
 
+  minusQty.addEventListener("click", function () {
 
-    const progress =
-      max > 0
-        ? scrollY / max * 100
-        : 0;
+    if (quantity > 1) {
+      quantity--;
+    }
 
+    updateSummary();
 
-    const progressBar =
-      $(".progress");
+  });
+
+}
 
 
-    if (progressBar) {
+/* =========================================================
+   QUANTITY PLUS
+========================================================= */
 
-      progressBar.style.width =
-        progress + "%";
+const plusQty = $("#plusQty");
+
+if (plusQty) {
+
+  plusQty.addEventListener("click", function () {
+
+    quantity++;
+
+    updateSummary();
+
+  });
+
+}
+
+
+/* =========================================================
+   CONFIRM WHATSAPP
+========================================================= */
+
+const confirmOrder = $("#confirmOrder");
+
+if (confirmOrder) {
+
+  confirmOrder.addEventListener("click", function () {
+
+    const customerName =
+      $("#customerName")?.value.trim() || "";
+
+    const customerAddress =
+      $("#customerAddress")?.value.trim() || "";
+
+    const customerNotes =
+      $("#customerNotes")?.value.trim() || "";
+
+    if (!customerName) {
+
+      alert("Please enter your name.");
+
+      $("#customerName")?.focus();
+
+      return;
 
     }
 
+    if (!customerAddress) {
 
-    const header =
-      document.querySelector("header");
+      alert("Please enter your shipping address.");
 
+      $("#customerAddress")?.focus();
 
-    if (header) {
-
-      header.classList.toggle(
-        "scrolled",
-        scrollY > 30
-      );
+      return;
 
     }
 
-  }
-);
+    const unitPrice =
+      railPrices[selectedRail] || 0;
+
+    const total =
+      unitPrice * quantity;
+
+    const message =
+
+`Halo FUNFINS+,
+
+Saya ingin melakukan pemesanan:
+
+PRODUCT
+${PRODUCT_NAME}
+
+COLOR
+${selectedColor}
+
+RAIL
+${selectedRail}
+
+STIFFNESS
+${selectedStiffness}
+
+QUANTITY
+${quantity}
+
+UNIT PRICE
+${formatPrice(unitPrice)}
+
+TOTAL
+${formatPrice(total)}
+
+CUSTOMER
+${customerName}
+
+SHIPPING ADDRESS
+${customerAddress}
+
+NOTES
+${customerNotes || "-"}
+
+Mohon informasi selanjutnya untuk proses pemesanan.
+
+Terima kasih.`;
+
+    const whatsappURL =
+      "https://wa.me/" +
+      WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+
+  });
+
+}
 
 
-/* =====================================================
-   LOADER
-===================================================== */
+/* =========================================================
+   SEARCH
+========================================================= */
 
-addEventListener(
-  "load",
-  () => {
+const searchBtn = $("#searchBtn");
+const closeSearch = $("#closeSearch");
+const search = $("#search");
+const searchInput = $("#searchInput");
+const results = $("#results");
 
-    setTimeout(
-      () => {
 
-        const loader =
-          $(".loader");
+if (searchBtn && search) {
 
-        if (loader) {
+  searchBtn.addEventListener("click", function () {
 
-          loader.classList.add(
-            "done"
-          );
+    search.classList.add("open");
 
-        }
+    if (searchInput) {
+      setTimeout(function () {
+        searchInput.focus();
+      }, 300);
+    }
 
+  });
+
+}
+
+
+if (closeSearch && search) {
+
+  closeSearch.addEventListener("click", function () {
+
+    search.classList.remove("open");
+
+  });
+
+}
+
+
+if (searchInput && results) {
+
+  searchInput.addEventListener("input", function () {
+
+    const query =
+      this.value
+        .trim()
+        .toLowerCase();
+
+    if (!query) {
+
+      results.innerHTML = "";
+
+      return;
+
+    }
+
+    const searchProducts = [
+
+      {
+        name: "FUNFINS+ Wave / Notch Blade Only",
+        type: "WAVE / NOTCH",
+        url: "../type-1/"
       },
-      900
+
+      {
+        name: "FUNFINS+ Rounded / Smooth Blade Only",
+        type: "ROUNDED / SMOOTH",
+        url: "../type-2/"
+      },
+
+      {
+        name: "FUNFINS+ Bulb / Rounded-Lobed Blade Only",
+        type: "BULB / ROUNDED-LOBED",
+        url: "./"
+      }
+
+    ];
+
+    const filtered =
+      searchProducts.filter(function (product) {
+
+        return (
+          product.name +
+          " " +
+          product.type
+        )
+        .toLowerCase()
+        .includes(query);
+
+      });
+
+    results.innerHTML =
+      filtered.map(function (product) {
+
+        return `
+          <a class="result" href="${product.url}">
+            <span>${product.name}</span>
+            <span>${product.type}</span>
+          </a>
+        `;
+
+      }).join("");
+
+  });
+
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+window.addEventListener("scroll", function () {
+
+  const progress = $(".progress");
+
+  if (progress) {
+
+    const documentHeight =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    if (documentHeight > 0) {
+
+      const percentage =
+        (window.scrollY / documentHeight) * 100;
+
+      progress.style.width =
+        percentage + "%";
+
+    }
+
+  }
+
+  const header = document.querySelector("header");
+
+  if (header) {
+
+    header.classList.toggle(
+      "scrolled",
+      window.scrollY > 30
     );
 
   }
-);
+
+});
 
 
-/* =====================================================
+/* =========================================================
    INITIAL STATE
-===================================================== */
+========================================================= */
 
-updateSummary();
-updateProductPrice();
+document.addEventListener("DOMContentLoaded", function () {
+
+  updateColor();
+
+  updateRail();
+
+  updateStiffness();
+
+  updatePrice();
+
+  updateSummary();
+
+});
