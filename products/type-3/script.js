@@ -1,711 +1,544 @@
-/* =========================================================
-   FUNFINS+ TYPE 3
-   BULB / ROUNDED-LOBED
-   DIRECT WHATSAPP CHECKOUT
-========================================================= */
+const WHATSAPP = "6289638142670";
 
-const PRODUCT_NAME = "FUNFINS+ Bulb / Rounded-Lobed Blade Only";
-
-const WHATSAPP_NUMBER = "6289638142670";
-
-const colors = {
-  "Red Ferrari": "funfins-type3-red-ferrari.jpg",
-  "Black": "funfins-type3-black.jpg",
-  "Ocean Blue": "funfins-type3-ocean-blue.jpg",
-  "Forest Green": "funfins-type3-forest-green.jpg",
-  "Pearl White": "funfins-type3-pearl-white.jpg",
-  "Sun Yellow": "funfins-type3-sun-yellow.jpg"
+const state = {
+  color: "Red Ferrari",
+  image: "funfins-type3-red-ferrari.jpg",
+  rail: "Water Rails",
+  price: 1500000,
+  stiffness: "Medium",
+  quantity: 1
 };
 
-const railPrices = {
-  "Water Rails": 1500000,
-  "U-List": 1000000
-};
-
-let selectedColor = "Red Ferrari";
-let selectedRail = "Water Rails";
-let selectedStiffness = "Medium";
-let quantity = 1;
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 
 
-/* =========================================================
-   HELPERS
-========================================================= */
-
-function $(selector) {
-  return document.querySelector(selector);
-}
-
-function $$(selector) {
-  return document.querySelectorAll(selector);
-}
+// ==============================
+// FORMAT PRICE
+// ==============================
 
 function formatPrice(value) {
-  return "RP " + Number(value).toLocaleString("id-ID");
+  return "Rp " + Number(value).toLocaleString("id-ID");
 }
 
 
-/* =========================================================
-   LOADER
-========================================================= */
+// ==============================
+// UPDATE PRODUCT IMAGES
+// ==============================
 
-window.addEventListener("load", function () {
+function updateImages() {
 
-  const loader = $(".loader");
+  const mainImage = $("#mainImage");
 
-  if (loader) {
-    setTimeout(function () {
-      loader.classList.add("done");
-    }, 700);
+  if (mainImage) {
+    mainImage.src = state.image;
   }
+
+  $$(".productPhoto img").forEach((img) => {
+    img.src = state.image;
+  });
+
+  const summaryImage = $("#summaryImage");
+
+  if (summaryImage) {
+    summaryImage.src = state.image;
+  }
+}
+
+
+// ==============================
+// UPDATE PRODUCT UI
+// ==============================
+
+function updateUI() {
+
+  // Product values
+
+  if ($("#colorValue")) {
+    $("#colorValue").textContent =
+      state.color.toUpperCase();
+  }
+
+  if ($("#railValue")) {
+    $("#railValue").textContent =
+      state.rail.toUpperCase();
+  }
+
+  if ($("#stiffnessValue")) {
+    $("#stiffnessValue").textContent =
+      state.stiffness.toUpperCase();
+  }
+
+  // Price
+
+  if ($("#price")) {
+    $("#price").textContent =
+      formatPrice(state.price);
+  }
+
+  // Specification color
+
+  if ($("#specColor")) {
+    $("#specColor").textContent =
+      state.color.toUpperCase();
+  }
+
+
+  // ==========================
+  // ORDER SUMMARY
+  // ==========================
+
+  if ($("#summaryColor")) {
+    $("#summaryColor").textContent =
+      state.color;
+  }
+
+  if ($("#summaryRail")) {
+    $("#summaryRail").textContent =
+      state.rail;
+  }
+
+  if ($("#summaryStiffness")) {
+    $("#summaryStiffness").textContent =
+      state.stiffness;
+  }
+
+  if ($("#summaryQty")) {
+    $("#summaryQty").textContent =
+      state.quantity;
+  }
+
+  if ($("#summaryTotal")) {
+    $("#summaryTotal").textContent =
+      formatPrice(
+        state.price * state.quantity
+      );
+  }
+
+
+  // ==========================
+  // ACTIVE COLOR
+  // ==========================
+
+  $$(".colorOption").forEach((button) => {
+
+    button.classList.toggle(
+      "active",
+      button.dataset.color === state.color
+    );
+
+  });
+
+
+  // ==========================
+  // ACTIVE RAIL
+  // ==========================
+
+  $$(".variantOption[data-rail]").forEach((button) => {
+
+    button.classList.toggle(
+      "active",
+      button.dataset.rail === state.rail
+    );
+
+  });
+
+
+  // ==========================
+  // ACTIVE STIFFNESS
+  // ==========================
+
+  $$(".stiffnessOption").forEach((button) => {
+
+    button.classList.toggle(
+      "active",
+      button.dataset.stiffness === state.stiffness
+    );
+
+  });
+
+
+  updateImages();
+}
+
+
+// ==============================
+// COLOR SELECTION
+// ==============================
+
+$$(".colorOption").forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    state.color =
+      button.dataset.color;
+
+    state.image =
+      button.dataset.image;
+
+    updateUI();
+
+  });
 
 });
 
 
-/* =========================================================
-   COLOR
-========================================================= */
+// ==============================
+// RAIL SELECTION
+// ==============================
 
-function updateColor() {
+$$(".variantOption[data-rail]").forEach((button) => {
 
-  const image = colors[selectedColor];
+  button.addEventListener("click", () => {
 
-  const mainImage = $("#mainImage");
-  const featureImage = $("#featureImage");
+    state.rail =
+      button.dataset.rail;
 
-  if (mainImage && image) {
-    mainImage.style.opacity = "0";
+    state.price =
+      Number(button.dataset.price);
 
-    setTimeout(function () {
-      mainImage.src = image;
-      mainImage.alt = PRODUCT_NAME + " - " + selectedColor;
-      mainImage.style.opacity = "1";
-    }, 120);
-  }
-
-  if (featureImage && image) {
-    featureImage.style.opacity = "0";
-
-    setTimeout(function () {
-      featureImage.src = image;
-      featureImage.alt = PRODUCT_NAME + " - " + selectedColor;
-      featureImage.style.opacity = "1";
-    }, 120);
-  }
-
-  $$(".colorOption").forEach(function (button) {
-
-    button.classList.toggle(
-      "active",
-      button.dataset.color === selectedColor
-    );
+    updateUI();
 
   });
 
-  updateSummary();
-
-}
+});
 
 
-/* =========================================================
-   RAIL
-========================================================= */
+// ==============================
+// STIFFNESS SELECTION
+// ==============================
 
-function updateRail() {
+$$(".stiffnessOption").forEach((button) => {
 
-  $$(".railOption").forEach(function (button) {
+  button.addEventListener("click", () => {
 
-    button.classList.toggle(
-      "active",
-      button.dataset.rail === selectedRail
-    );
+    state.stiffness =
+      button.dataset.stiffness;
+
+    updateUI();
 
   });
 
-  updatePrice();
-  updateSummary();
-
-}
+});
 
 
-/* =========================================================
-   STIFFNESS
-========================================================= */
+// ==============================
+// OPEN ORDER MODAL
+// ==============================
 
-function updateStiffness() {
+function openOrder() {
 
-  $$(".stiffnessOption").forEach(function (button) {
-
-    button.classList.toggle(
-      "active",
-      button.dataset.stiffness === selectedStiffness
-    );
-
-  });
-
-  updateSummary();
-
-}
-
-
-/* =========================================================
-   PRICE
-========================================================= */
-
-function updatePrice() {
-
-  const price = railPrices[selectedRail] || 0;
-
-  const priceElement = $("#price");
-
-  if (priceElement) {
-    priceElement.textContent = formatPrice(price);
-  }
-
-}
-
-
-/* =========================================================
-   SUMMARY
-========================================================= */
-
-function updateSummary() {
-
-  const summaryColor = $("#summaryColor");
-  const summaryRail = $("#summaryRail");
-  const summaryStiffness = $("#summaryStiffness");
-  const quantityElement = $("#quantity");
-  const totalPrice = $("#totalPrice");
-
-  if (summaryColor) {
-    summaryColor.textContent = selectedColor.toUpperCase();
-  }
-
-  if (summaryRail) {
-    summaryRail.textContent = selectedRail.toUpperCase();
-  }
-
-  if (summaryStiffness) {
-    summaryStiffness.textContent = selectedStiffness.toUpperCase();
-  }
-
-  if (quantityElement) {
-    quantityElement.textContent = quantity;
-  }
-
-  if (totalPrice) {
-
-    const price =
-      (railPrices[selectedRail] || 0) *
-      quantity;
-
-    totalPrice.textContent = formatPrice(price);
-  }
-
-}
-
-
-/* =========================================================
-   OPEN ORDER MODAL
-========================================================= */
-
-function openOrderModal() {
+  updateUI();
 
   const modal = $("#orderModal");
 
-  if (!modal) {
-    console.error("FUNFINS ERROR: #orderModal tidak ditemukan.");
-    return;
-  }
-
-  updateSummary();
+  if (!modal) return;
 
   modal.classList.add("open");
 
-  document.body.classList.add("modalOpen");
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.classList.add(
+    "modalOpen"
+  );
 
 }
 
 
-/* =========================================================
-   CLOSE ORDER MODAL
-========================================================= */
+// ==============================
+// CLOSE ORDER MODAL
+// ==============================
 
-function closeOrderModal() {
+function closeOrder() {
 
   const modal = $("#orderModal");
 
-  if (!modal) {
-    return;
-  }
+  if (!modal) return;
 
   modal.classList.remove("open");
 
-  document.body.classList.remove("modalOpen");
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.classList.remove(
+    "modalOpen"
+  );
 
 }
 
 
-/* =========================================================
-   COLOR EVENTS
-========================================================= */
+// ==============================
+// CHECKOUT BUTTONS
+// ==============================
 
-$$(".colorOption").forEach(function (button) {
+if ($("#checkoutBtn")) {
 
-  button.addEventListener("click", function () {
+  $("#checkoutBtn").addEventListener(
+    "click",
+    openOrder
+  );
 
-    const color = this.dataset.color;
+}
 
-    if (!color || !colors[color]) {
-      return;
+if ($("#bottomBuyBtn")) {
+
+  $("#bottomBuyBtn").addEventListener(
+    "click",
+    openOrder
+  );
+
+}
+
+if ($("#headerOrder")) {
+
+  $("#headerOrder").addEventListener(
+    "click",
+    openOrder
+  );
+
+}
+
+
+// ==============================
+// CLOSE MODAL
+// ==============================
+
+if ($("#orderClose")) {
+
+  $("#orderClose").addEventListener(
+    "click",
+    closeOrder
+  );
+
+}
+
+
+if ($("#orderModal")) {
+
+  $("#orderModal").addEventListener(
+    "click",
+    (event) => {
+
+      if (
+        event.target === $("#orderModal")
+      ) {
+
+        closeOrder();
+
+      }
+
     }
-
-    selectedColor = color;
-
-    updateColor();
-
-  });
-
-});
-
-
-/* =========================================================
-   RAIL EVENTS
-========================================================= */
-
-$$(".railOption").forEach(function (button) {
-
-  button.addEventListener("click", function () {
-
-    const rail = this.dataset.rail;
-
-    if (!rail || railPrices[rail] === undefined) {
-      return;
-    }
-
-    selectedRail = rail;
-
-    updateRail();
-
-  });
-
-});
-
-
-/* =========================================================
-   STIFFNESS EVENTS
-========================================================= */
-
-$$(".stiffnessOption").forEach(function (button) {
-
-  button.addEventListener("click", function () {
-
-    const stiffness = this.dataset.stiffness;
-
-    if (!stiffness) {
-      return;
-    }
-
-    selectedStiffness = stiffness;
-
-    updateStiffness();
-
-  });
-
-});
-
-
-/* =========================================================
-   BUY BUTTON
-========================================================= */
-
-const buyBtn = $("#buyBtn");
-
-if (buyBtn) {
-
-  buyBtn.addEventListener("click", function () {
-
-    openOrderModal();
-
-  });
+  );
 
 }
 
 
-/* =========================================================
-   BOTTOM BUY BUTTON
-========================================================= */
+// ==============================
+// ESC KEY
+// ==============================
 
-const bottomBuyBtn = $("#bottomBuyBtn");
+document.addEventListener(
+  "keydown",
+  (event) => {
 
-if (bottomBuyBtn) {
+    if (event.key === "Escape") {
 
-  bottomBuyBtn.addEventListener("click", function () {
+      closeOrder();
 
-    openOrderModal();
-
-  });
-
-}
-
-
-/* =========================================================
-   CLOSE BUTTON
-========================================================= */
-
-const closeModal = $("#closeModal");
-
-if (closeModal) {
-
-  closeModal.addEventListener("click", function () {
-
-    closeOrderModal();
-
-  });
-
-}
-
-
-/* =========================================================
-   CLICK OUTSIDE MODAL
-========================================================= */
-
-const orderModal = $("#orderModal");
-
-if (orderModal) {
-
-  orderModal.addEventListener("click", function (event) {
-
-    if (event.target === orderModal) {
-      closeOrderModal();
-    }
-
-  });
-
-}
-
-
-/* =========================================================
-   ESCAPE
-========================================================= */
-
-document.addEventListener("keydown", function (event) {
-
-  if (event.key === "Escape") {
-
-    closeOrderModal();
-
-    const search = $("#search");
-
-    if (search) {
-      search.classList.remove("open");
     }
 
   }
-
-});
-
-
-/* =========================================================
-   QUANTITY MINUS
-========================================================= */
-
-const minusQty = $("#minusQty");
-
-if (minusQty) {
-
-  minusQty.addEventListener("click", function () {
-
-    if (quantity > 1) {
-      quantity--;
-    }
-
-    updateSummary();
-
-  });
-
-}
+);
 
 
-/* =========================================================
-   QUANTITY PLUS
-========================================================= */
+// ==============================
+// QUANTITY - MINUS
+// ==============================
 
-const plusQty = $("#plusQty");
+if ($("#qtyMinus")) {
 
-if (plusQty) {
+  $("#qtyMinus").addEventListener(
+    "click",
+    () => {
 
-  plusQty.addEventListener("click", function () {
+      state.quantity =
+        Math.max(
+          1,
+          state.quantity - 1
+        );
 
-    quantity++;
-
-    updateSummary();
-
-  });
-
-}
-
-
-/* =========================================================
-   CONFIRM WHATSAPP
-========================================================= */
-
-const confirmOrder = $("#confirmOrder");
-
-if (confirmOrder) {
-
-  confirmOrder.addEventListener("click", function () {
-
-    const customerName =
-      $("#customerName")?.value.trim() || "";
-
-    const customerAddress =
-      $("#customerAddress")?.value.trim() || "";
-
-    const customerNotes =
-      $("#customerNotes")?.value.trim() || "";
-
-    if (!customerName) {
-
-      alert("Please enter your name.");
-
-      $("#customerName")?.focus();
-
-      return;
+      updateUI();
 
     }
+  );
 
-    if (!customerAddress) {
+}
 
-      alert("Please enter your shipping address.");
 
-      $("#customerAddress")?.focus();
+// ==============================
+// QUANTITY - PLUS
+// ==============================
 
-      return;
+if ($("#qtyPlus")) {
+
+  $("#qtyPlus").addEventListener(
+    "click",
+    () => {
+
+      state.quantity += 1;
+
+      updateUI();
 
     }
-
-    const unitPrice =
-      railPrices[selectedRail] || 0;
-
-    const total =
-      unitPrice * quantity;
-
-    const message =
-
-`Halo FUNFINS+,
-
-Saya ingin melakukan pemesanan:
-
-PRODUCT
-${PRODUCT_NAME}
-
-COLOR
-${selectedColor}
-
-RAIL
-${selectedRail}
-
-STIFFNESS
-${selectedStiffness}
-
-QUANTITY
-${quantity}
-
-UNIT PRICE
-${formatPrice(unitPrice)}
-
-TOTAL
-${formatPrice(total)}
-
-CUSTOMER
-${customerName}
-
-SHIPPING ADDRESS
-${customerAddress}
-
-NOTES
-${customerNotes || "-"}
-
-Mohon informasi selanjutnya untuk proses pemesanan.
-
-Terima kasih.`;
-
-    const whatsappURL =
-      "https://wa.me/" +
-      WHATSAPP_NUMBER +
-      "?text=" +
-      encodeURIComponent(message);
-
-    window.open(whatsappURL, "_blank");
-
-  });
+  );
 
 }
 
 
-/* =========================================================
-   SEARCH
-========================================================= */
+// ==============================
+// CONFIRM ORDER
+// ==============================
 
-const searchBtn = $("#searchBtn");
-const closeSearch = $("#closeSearch");
-const search = $("#search");
-const searchInput = $("#searchInput");
-const results = $("#results");
+if ($("#confirmOrder")) {
 
+  $("#confirmOrder").addEventListener(
+    "click",
+    () => {
 
-if (searchBtn && search) {
+      const name =
+        $("#customerName")?.value.trim() || "-";
 
-  searchBtn.addEventListener("click", function () {
+      const address =
+        $("#customerAddress")?.value.trim() || "-";
 
-    search.classList.add("open");
-
-    if (searchInput) {
-      setTimeout(function () {
-        searchInput.focus();
-      }, 300);
-    }
-
-  });
-
-}
+      const notes =
+        $("#customerNotes")?.value.trim() || "-";
 
 
-if (closeSearch && search) {
+      const message = [
 
-  closeSearch.addEventListener("click", function () {
+        "Halo FUNFINS+, saya ingin melakukan pemesanan:",
 
-    search.classList.remove("open");
+        "",
 
-  });
+        "Product: FUNFINS+ Bulb / Rounded-Lobed Blade Only",
 
-}
+        `Color: ${state.color}`,
+
+        `Rail: ${state.rail}`,
+
+        `Stiffness: ${state.stiffness}`,
+
+        `Quantity: ${state.quantity}`,
+
+        `Total: ${formatPrice(
+          state.price * state.quantity
+        )}`,
+
+        "",
+
+        `Name: ${name}`,
+
+        `Address: ${address}`,
+
+        `Notes: ${notes}`
+
+      ].join("\n");
 
 
-if (searchInput && results) {
-
-  searchInput.addEventListener("input", function () {
-
-    const query =
-      this.value
-        .trim()
-        .toLowerCase();
-
-    if (!query) {
-
-      results.innerHTML = "";
-
-      return;
+      window.open(
+        `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`,
+        "_blank"
+      );
 
     }
-
-    const searchProducts = [
-
-      {
-        name: "FUNFINS+ Wave / Notch Blade Only",
-        type: "WAVE / NOTCH",
-        url: "../type-1/"
-      },
-
-      {
-        name: "FUNFINS+ Rounded / Smooth Blade Only",
-        type: "ROUNDED / SMOOTH",
-        url: "../type-2/"
-      },
-
-      {
-        name: "FUNFINS+ Bulb / Rounded-Lobed Blade Only",
-        type: "BULB / ROUNDED-LOBED",
-        url: "./"
-      }
-
-    ];
-
-    const filtered =
-      searchProducts.filter(function (product) {
-
-        return (
-          product.name +
-          " " +
-          product.type
-        )
-        .toLowerCase()
-        .includes(query);
-
-      });
-
-    results.innerHTML =
-      filtered.map(function (product) {
-
-        return `
-          <a class="result" href="${product.url}">
-            <span>${product.name}</span>
-            <span>${product.type}</span>
-          </a>
-        `;
-
-      }).join("");
-
-  });
+  );
 
 }
 
 
-/* =========================================================
-   SCROLL PROGRESS
-========================================================= */
+// ==============================
+// SCROLL PROGRESS
+// ==============================
 
-window.addEventListener("scroll", function () {
+window.addEventListener(
+  "scroll",
+  () => {
 
-  const progress = $(".progress");
-
-  if (progress) {
-
-    const documentHeight =
+    const max =
       document.documentElement.scrollHeight -
       window.innerHeight;
 
-    if (documentHeight > 0) {
+    const progress =
+      max > 0
+        ? (window.scrollY / max) * 100
+        : 0;
 
-      const percentage =
-        (window.scrollY / documentHeight) * 100;
 
-      progress.style.width =
-        percentage + "%";
+    const progressBar =
+      $(".progress");
+
+    if (progressBar) {
+
+      progressBar.style.width =
+        `${progress}%`;
+
+    }
+
+
+    const header =
+      $("header");
+
+    if (header) {
+
+      header.classList.toggle(
+        "scrolled",
+        window.scrollY > 30
+      );
 
     }
 
   }
+);
 
-  const header = document.querySelector("header");
 
-  if (header) {
+// ==============================
+// LOADER
+// ==============================
 
-    header.classList.toggle(
-      "scrolled",
-      window.scrollY > 30
+window.addEventListener(
+  "load",
+  () => {
+
+    setTimeout(
+      () => {
+
+        const loader =
+          $(".loader");
+
+        if (loader) {
+
+          loader.classList.add(
+            "done"
+          );
+
+        }
+
+      },
+      700
     );
 
   }
+);
 
-});
 
+// ==============================
+// INITIAL STATE
+// ==============================
 
-/* =========================================================
-   INITIAL STATE
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  updateColor();
-
-  updateRail();
-
-  updateStiffness();
-
-  updatePrice();
-
-  updateSummary();
-
-});
+updateUI();
