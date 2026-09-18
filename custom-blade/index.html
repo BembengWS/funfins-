@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FUNFINS+ Custom Blade — choose from the existing blade series">
+<title>FUNFINS+ — Custom Blade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/cinematic.css">
+</head>
+<body>
+<div class="progress"></div>
+<header class="siteHeaderSimple">
+  <button class="headerSearch" data-search-btn><span class="searchIcon">⌕</span><span>SEARCH</span></button>
+  <a class="logo" href="../">FUNFINS<span>+</span><small>DIVE GEAR</small></a>
+  <button class="menuTrigger" data-menu-btn><b>MENU</b><span>☰</span></button>
+</header>
+<div class="simpleMenu" data-menu-panel>
+  <button data-menu-close aria-label="Close menu">×</button>
+  <small>FUNFINS+ / MENU</small>
+  <nav>
+    <a href="../custom-blade/">CUSTOM BLADE ↗</a>
+    <a href="../rentals/">RENTALS ↗</a>
+    <a href="../dive-gear/">DIVE GEAR ↗</a>
+    <a href="../services/">SERVICES ↗</a>
+    <a href="../#story">ABOUT ↗</a>
+    <a href="../#contact">CONTACT ↗</a>
+  </nav>
+</div>
+<div class="searchOverlaySimple" data-search-overlay>
+  <button data-search-close aria-label="Close search">×</button>
+  <small>FUNFINS+ / SEARCH</small>
+  <input placeholder="SEARCH FUNFINS..." autocomplete="off">
+</div>
+
+<main class="categoryPage customBladePage">
+  <section class="categoryHero">
+    <div class="categoryHeroCopy">
+      <small>FUNFINS+ / CUSTOM BLADE</small>
+      <h1>YOUR BLADE.<br>YOUR STYLE.</h1>
+      <p>Start with one of the three existing FUNFINS+ blade profiles, then choose the setup that matches how you dive.</p>
+      <a class="btn" href="#bladeSeries">EXPLORE BLADE SERIES ↗</a>
+    </div>
+  </section>
+
+  <section id="bladeSeries" class="customProducts">
+    <div class="customProductsHead">
+      <div>
+        <small>FUNFINS+ / BLADE SERIES</small>
+        <h2>CHOOSE YOUR<br><em>PROFILE.</em></h2>
+      </div>
+      <p>03 EXISTING PRODUCTS<br>BLADE ONLY</p>
+    </div>
+
+    <div class="customProductGrid">
+      <a class="customProductCard" href="../products/type-1/">
+        <div class="customProductMedia"><img src="../products/type-1/funfins-type1-red-ferrari.jpg" alt="FUNFINS+ Wave / Notch Blade Only"></div>
+        <div class="customProductOverlay"></div>
+        <div class="customProductNumber">01</div>
+        <div class="customProductInfo">
+          <small>TYPE 1</small>
+          <h3>WAVE / NOTCH</h3>
+          <p>Power &amp; response. Fast response, direct power and active-kick control.</p>
+          <span>VIEW PRODUCT ↗</span>
+        </div>
+      </a>
+
+      <a class="customProductCard" href="../products/type-2/">
+        <div class="customProductMedia"><img src="../products/type-2/funfins-type2-red-ferrari.jpg" alt="FUNFINS+ Rounded / Smooth Blade Only"></div>
+        <div class="customProductOverlay"></div>
+        <div class="customProductNumber">02</div>
+        <div class="customProductInfo">
+          <small>TYPE 2</small>
+          <h3>ROUNDED / SMOOTH</h3>
+          <p>Balance &amp; comfort. Smooth flex and versatile kicking.</p>
+          <span>VIEW PRODUCT ↗</span>
+        </div>
+      </a>
+
+      <a class="customProductCard" href="../products/type-3/">
+        <div class="customProductMedia"><img src="../products/type-3/funfins-type3-red-ferrari.jpg" alt="FUNFINS+ Bulb / Rounded-Lobed Blade Only"></div>
+        <div class="customProductOverlay"></div>
+        <div class="customProductNumber">03</div>
+        <div class="customProductInfo">
+          <small>TYPE 3</small>
+          <h3>BULB / ROUNDED-LOBED</h3>
+          <p>Efficiency &amp; control. Controlled movement and consistent propulsion.</p>
+          <span>VIEW PRODUCT ↗</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="categoryIntro">
+    <div class="categoryKicker">CUSTOM BLADE / START HERE</div>
+    <h2>Three profiles.<br>One deeper feeling.</h2>
+    <p>Browse the existing FUNFINS+ blade series above. Each product page includes its available colors, rail options and stiffness choices so you can build the setup that fits your dive.</p>
+  </section>
+
+  <section class="categoryCta">
+    <h2>READY TO<br><em>GO DEEPER?</em></h2>
+    <p>Talk to FUNFINS+ directly about your next blade setup.</p>
+    <a class="btn" target="_blank" rel="noopener" href="https://wa.me/6289638142670?text=Halo%20FUNFINS%2B%2C%20saya%20ingin%20bertanya%20tentang%20Custom%20Blade.">CONTACT VIA WHATSAPP ↗</a>
+  </section>
+</main>
+<script src="../assets/js/cinematic.js"></script>
+<script>
+const menuBtn=document.querySelector('[data-menu-btn]');
+const menu=document.querySelector('[data-menu-panel]');
+const menuClose=document.querySelector('[data-menu-close]');
+const searchBtn=document.querySelector('[data-search-btn]');
+const search=document.querySelector('[data-search-overlay]');
+const searchClose=document.querySelector('[data-search-close]');
+function closeMenu(){menu?.classList.remove('open');document.body.classList.remove('menuOpen');}
+function closeSearch(){search?.classList.remove('open');}
+menuBtn?.addEventListener('click',()=>{menu?.classList.add('open');document.body.classList.add('menuOpen');});
+menuClose?.addEventListener('click',closeMenu);
+menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+searchBtn?.addEventListener('click',()=>{search?.classList.add('open');search?.querySelector('input')?.focus();});
+searchClose?.addEventListener('click',closeSearch);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closeSearch();}});
+</script>
+</body>
+</html>
