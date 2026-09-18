@@ -1,272 +1,3269 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="FUNFINS+ — fiberglass freediving blade fins.">
-<title>FUNFINS+ | Blade Only — Rounded / Smooth</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="FUNFINS+ Rounded / Smooth — fiberglass freediving blade."
+  >
+
+  <title>FUNFINS+ | Rounded / Smooth Blade Only</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <!-- =====================================================
+       SECTION 04 — FEEL THE FLOW
+       Additional visual styling
+  ====================================================== -->
+
+  <style>
+
+    .powerSection {
+      position: relative;
+      overflow: hidden;
+
+      padding:
+        110px 36px 42px;
+
+      background:
+        radial-gradient(
+          circle at 75% 10%,
+          rgba(0, 210, 220, .10),
+          transparent 34%
+        ),
+        linear-gradient(
+          180deg,
+          #020b0f 0%,
+          #031217 48%,
+          #02090d 100%
+        );
+    }
+
+
+    .powerSection::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          ellipse at 80% 35%,
+          rgba(0, 220, 230, .12),
+          transparent 38%
+        );
+
+      pointer-events: none;
+    }
+
+
+    .powerSection::after {
+      content: "";
+
+      position: absolute;
+
+      width: 900px;
+      height: 900px;
+
+      right: -300px;
+      top: -300px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0, 225, 235, .08),
+          transparent 68%
+        );
+
+      pointer-events: none;
+    }
+
+
+
+    /* =====================================================
+       POWER HERO
+    ====================================================== */
+
+    .powerHero {
+      position: relative;
+
+      min-height: 430px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1.15fr;
+
+      align-items: center;
+
+      gap: 30px;
+
+      max-width: 1500px;
+
+      margin:
+        0 auto 38px;
+
+      z-index: 2;
+    }
+
+
+    .powerHeroCopy {
+      position: relative;
+
+      z-index: 3;
+
+      padding-left: 2vw;
+    }
+
+
+    .powerEyebrow {
+      display: block;
+
+      margin-bottom: 22px;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 11px;
+
+      letter-spacing: .42em;
+
+      color:
+        rgba(255,255,255,.58);
+    }
+
+
+    .powerHero h2 {
+      margin: 0;
+
+      font-size:
+        clamp(68px, 8vw, 145px);
+
+      line-height: .82;
+
+      letter-spacing: -.075em;
+
+      font-weight: 800;
+
+      color: #f4f7f7;
+    }
+
+
+    .powerHero h2 em {
+      color: #58e1e5;
+
+      font-style: normal;
+    }
+
+
+    .powerSubtitle {
+      max-width: 580px;
+
+      margin-top: 28px;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 12px;
+
+      line-height: 1.8;
+
+      letter-spacing: .16em;
+
+      color:
+        rgba(255,255,255,.68);
+    }
+
+
+    .powerLine {
+      width: 62px;
+      height: 2px;
+
+      margin-top: 26px;
+
+      background: #55dfe4;
+    }
+
+
+
+    /* =====================================================
+       MAIN PRODUCT VISUAL
+    ====================================================== */
+
+    .powerHeroVisual {
+      position: relative;
+
+      min-height: 430px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      overflow: hidden;
+
+      border-radius: 2px;
+    }
+
+
+    .powerHeroVisual::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          115deg,
+          rgba(0,0,0,.92) 0%,
+          rgba(0,20,25,.45) 45%,
+          rgba(0,0,0,.08) 100%
+        );
+
+      z-index: 2;
+    }
+
+
+    .powerHeroVisual::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          ellipse at 70% 40%,
+          rgba(38,222,230,.25),
+          transparent 42%
+        );
+
+      mix-blend-mode: screen;
+
+      z-index: 3;
+    }
+
+
+    .powerHeroImage {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      opacity: .72;
+
+      filter:
+        saturate(.75)
+        contrast(1.12)
+        brightness(.65);
+
+      transform: scale(1.04);
+
+      transition:
+        transform 1s ease;
+    }
+
+
+    .powerHeroVisual:hover
+    .powerHeroImage {
+      transform: scale(1.08);
+    }
+
+
+    .powerHeroProduct {
+      position: relative;
+
+      z-index: 4;
+
+      width: 64%;
+
+      filter:
+        drop-shadow(
+          0 25px 40px
+          rgba(0,0,0,.7)
+        );
+
+      transform:
+        rotate(-5deg)
+        translateY(8px);
+
+      opacity: .94;
+    }
+
+
+    .powerHeroLabel {
+      position: absolute;
+
+      right: 30px;
+      bottom: 28px;
+
+      z-index: 5;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .34em;
+
+      color:
+        rgba(255,255,255,.58);
+
+      writing-mode: vertical-rl;
+    }
+
+
+
+    /* =====================================================
+       THREE FEATURE CARDS
+    ====================================================== */
+
+    .powerCards {
+      position: relative;
+
+      z-index: 5;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 20px;
+
+      max-width: 1500px;
+
+      margin: 0 auto;
+    }
+
+
+    .powerCard {
+      position: relative;
+
+      min-height: 430px;
+
+      overflow: hidden;
+
+      border:
+        1px solid
+        rgba(95,220,225,.28);
+
+      border-radius: 10px;
+
+      background: #031014;
+
+      transition:
+        transform .5s ease,
+        border-color .5s ease;
+    }
+
+
+    .powerCard:hover {
+      transform:
+        translateY(-7px);
+
+      border-color:
+        rgba(95,220,225,.72);
+    }
+
+
+    .powerCard::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.05) 20%,
+          rgba(0,5,8,.30) 48%,
+          rgba(0,5,8,.94) 100%
+        );
+
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+
+    .powerCardImage {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      opacity: .82;
+
+      filter:
+        saturate(.86)
+        contrast(1.08)
+        brightness(.70);
+
+      transition:
+        transform .8s ease,
+        opacity .8s ease;
+    }
+
+
+    .powerCard:hover
+    .powerCardImage {
+      transform:
+        scale(1.055);
+
+      opacity: .92;
+    }
+
+
+    .powerCard:nth-child(1)
+    .powerCardImage {
+      object-position:
+        52% center;
+    }
+
+
+    .powerCard:nth-child(2)
+    .powerCardImage {
+      object-position:
+        48% center;
+    }
+
+
+    .powerCard:nth-child(3)
+    .powerCardImage {
+      object-position:
+        center center;
+    }
+
+
+
+    /* =====================================================
+       CARD CONTENT
+    ====================================================== */
+
+    .powerCardContent {
+      position: absolute;
+      inset: 0;
+
+      z-index: 4;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      padding: 28px;
+    }
+
+
+    .powerCardTop {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-start;
+    }
+
+
+    .powerNumber {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 11px;
+
+      letter-spacing: .18em;
+
+      color: #54dfe5;
+    }
+
+
+    .powerNumber::after {
+      content: "";
+
+      width: 55px;
+      height: 1px;
+
+      background:
+        rgba(84,223,229,.35);
+    }
+
+
+    .powerCardMicro {
+      text-align: right;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 8px;
+
+      line-height: 1.8;
+
+      letter-spacing: .24em;
+
+      color:
+        rgba(255,255,255,.52);
+    }
+
+
+    .powerCardBottom {
+      max-width: 470px;
+    }
+
+
+    .powerCardLabel {
+      display: block;
+
+      margin-bottom: 9px;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 10px;
+
+      letter-spacing: .30em;
+
+      color:
+        rgba(255,255,255,.62);
+    }
+
+
+    .powerCard h3 {
+      margin:
+        0 0 14px;
+
+      font-size:
+        clamp(29px, 3vw, 46px);
+
+      line-height: .95;
+
+      letter-spacing: -.045em;
+
+      color: #f4f7f7;
+    }
+
+
+    .powerCard p {
+      max-width: 430px;
+
+      margin:
+        0 0 24px;
+
+      font-size: 13px;
+
+      line-height: 1.75;
+
+      color:
+        rgba(255,255,255,.74);
+    }
+
+
+    .powerTag {
+      display: inline-block;
+
+      padding-top: 14px;
+
+      border-top:
+        1px solid
+        rgba(84,223,229,.35);
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .20em;
+
+      color:
+        rgba(255,255,255,.72);
+    }
+
+
+
+    /* =====================================================
+       POWER FOOTER
+    ====================================================== */
+
+    .powerFooter {
+      position: relative;
+
+      z-index: 5;
+
+      max-width: 1500px;
+
+      margin:
+        28px auto 0;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 25px;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .27em;
+
+      color:
+        rgba(255,255,255,.42);
+    }
+
+
+    .powerFooter strong {
+      color:
+        rgba(255,255,255,.66);
+
+      font-weight: 400;
+    }
+
+
+    .powerFooterRight {
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+    }
+
+
+    .powerFooterRight::before {
+      content: "";
+
+      width: 48px;
+      height: 2px;
+
+      background: #55dfe4;
+    }
+
+
+
+    /* =====================================================
+       SECTION 03 DETAIL STYLING
+    ====================================================== */
+
+    .detailSection {
+      margin-top: 90px;
+    }
+
+
+    .detailSectionHeader {
+      display: grid;
+
+      grid-template-columns:
+        .7fr 1.3fr;
+
+      align-items: end;
+
+      gap: 30px;
+
+      padding-bottom: 22px;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.14);
+    }
+
+
+    .detailSectionHeader span {
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 10px;
+
+      letter-spacing: .22em;
+
+      opacity: .58;
+    }
+
+
+    .detailSectionHeader h3 {
+      margin: 0;
+
+      font-size:
+        clamp(32px, 4vw, 58px);
+
+      line-height: .95;
+
+      letter-spacing: -.05em;
+    }
+
+
+    .detailList {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap:
+        0 50px;
+    }
+
+
+    .detailItem {
+      display: grid;
+
+      grid-template-columns:
+        46px 1fr;
+
+      gap: 18px;
+
+      padding:
+        25px 0;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.10);
+    }
+
+
+    .detailIndex {
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 10px;
+
+      color:
+        rgba(0,0,0,.42);
+    }
+
+
+    .detailItem h4 {
+      margin:
+        0 0 8px;
+
+      font-size: 15px;
+
+      letter-spacing: .04em;
+    }
+
+
+    .detailItem p {
+      margin: 0;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+
+      opacity: .68;
+    }
+
+
+    .drawbacksSection
+    .detailSectionHeader h3 {
+      color:
+        rgba(0,0,0,.72);
+    }
+
+
+    .shapeNote {
+      margin-top: 55px;
+
+      padding:
+        25px 0;
+
+      border-top:
+        1px solid
+        rgba(0,0,0,.18);
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.18);
+    }
+
+
+    .shapeNote span,
+    .shapePositioning span,
+    .importantNote span,
+    .productPositioning > span {
+      display: block;
+
+      margin-bottom: 15px;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .22em;
+
+      opacity: .58;
+    }
+
+
+    .shapeNote p {
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      opacity: .72;
+    }
+
+
+    .shapePositioning {
+      margin-top: 70px;
+
+      padding:
+        45px 0;
+
+      text-align: center;
+
+      border:
+        1px solid
+        rgba(0,0,0,.12);
+    }
+
+
+    .shapePositioning h3 {
+      margin:
+        0 0 12px;
+
+      font-size:
+        clamp(36px, 5vw, 70px);
+
+      letter-spacing:
+        -.055em;
+    }
+
+
+    .shapePositioning p {
+      margin: 0;
+
+      font-size: 14px;
+
+      opacity: .62;
+    }
+
+
+    .importantNote {
+      margin-top: 70px;
+
+      padding:
+        35px;
+
+      background:
+        rgba(0,0,0,.035);
+
+      border:
+        1px solid
+        rgba(0,0,0,.10);
+    }
+
+
+    .importantNote p {
+      max-width: 850px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      opacity: .68;
+    }
+
+
+    .influenceGrid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 8px;
+
+      margin-top: 25px;
+    }
+
+
+    .influenceGrid span {
+      display: block;
+
+      padding:
+        13px 10px;
+
+      border:
+        1px solid
+        rgba(0,0,0,.10);
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 8px;
+
+      letter-spacing: .12em;
+
+      text-align: center;
+
+      opacity: .65;
+    }
+
+
+    .productPositioning {
+      margin-top: 75px;
+    }
+
+
+    .positionTable {
+      border-top:
+        1px solid
+        rgba(0,0,0,.16);
+    }
+
+
+    .positionTable > div {
+      display: grid;
+
+      grid-template-columns:
+        .7fr 1fr 1fr 1.5fr;
+
+      gap: 20px;
+
+      padding:
+        18px 0;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.10);
+    }
+
+
+    .positionTable b,
+    .positionTable span {
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+
+    .positionTable b {
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      opacity: .55;
+    }
+
+
+    .positionTable span {
+      opacity: .72;
+    }
+
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 900px) {
+
+      .powerSection {
+        padding:
+          80px 20px 32px;
+      }
+
+
+      .powerHero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        gap: 35px;
+      }
+
+
+      .powerHeroCopy {
+        padding-left: 0;
+      }
+
+
+      .powerHero h2 {
+        font-size:
+          clamp(60px, 16vw, 100px);
+      }
+
+
+      .powerHeroVisual {
+        min-height: 380px;
+      }
+
+
+      .powerHeroProduct {
+        width: 72%;
+      }
+
+
+      .powerCards {
+        grid-template-columns: 1fr;
+      }
+
+
+      .powerCard {
+        min-height: 470px;
+      }
+
+
+      .powerFooter {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        line-height: 1.8;
+      }
+
+
+      .detailSectionHeader {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+      }
+
+
+      .detailList {
+        grid-template-columns: 1fr;
+      }
+
+
+      .influenceGrid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+
+      .positionTable {
+        overflow-x: auto;
+      }
+
+
+      .positionTable > div {
+        min-width: 720px;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .powerHeroVisual {
+        min-height: 300px;
+      }
+
+
+      .powerHeroProduct {
+        width: 82%;
+      }
+
+
+      .powerCard {
+        min-height: 430px;
+      }
+
+
+      .powerCardContent {
+        padding: 22px;
+      }
+
+
+      .powerCard h3 {
+        font-size: 31px;
+      }
+
+
+      .importantNote {
+        padding:
+          24px 18px;
+      }
+
+
+      .influenceGrid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 <body>
-<div class="loader"><b>FUNFINS<span>+</span></b><i></i></div><div class="progress"></div>
+
+
+
+<!-- =========================================================
+     LOADER
+========================================================= -->
+
+<div class="loader">
+
+  <b>
+    FUNFINS<span>+</span>
+  </b>
+
+  <i></i>
+
+</div>
+
+
+<div class="progress"></div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
-  <a class="logo" href="#top">FUNFINS<span>+</span><small>DIVE GEAR</small></a>
-  <nav><a href="#shop">SHOP</a><a href="#details">DETAILS</a><a href="#story">ABOUT</a><a href="#contact">CONTACT</a></nav>
-  <div class="actions"><button class="waHeaderBtn" id="headerOrder">ORDER VIA WHATSAPP ↗</button><button class="menu">☰</button></div>
+
+  <a
+    class="logo"
+    href="#top"
+  >
+
+    FUNFINS<span>+</span>
+
+    <small>
+      DIVE GEAR
+    </small>
+
+  </a>
+
+
+  <nav>
+
+    <a href="#shop">
+      SHOP
+    </a>
+
+    <a href="#details">
+      DETAILS
+    </a>
+
+    <a href="#story">
+      ABOUT
+    </a>
+
+    <a href="#contact">
+      CONTACT
+    </a>
+
+  </nav>
+
+
+  <div class="actions">
+
+    <button
+      class="waHeaderBtn"
+      id="headerOrder"
+      type="button"
+    >
+      ORDER VIA WHATSAPP ↗
+    </button>
+
+
+    <button
+      class="menu"
+      type="button"
+      aria-label="Menu"
+    >
+      ☰
+    </button>
+
+  </div>
+
 </header>
 
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
 <main id="top">
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero">
-  <div class="water"></div><div class="heroMark">FUNFINS</div>
-  <div class="heroCopy">
-    <small>FUNFINS + DIVE GEAR</small><h1>GO<br><em>DEEPER.</em></h1>
-    <p>Long-blade fiberglass fins built for controlled movement, efficient kicks and time beneath the surface.</p>
-    <a class="btn" href="#shop">SHOP THE BLADE ↗</a>
+
+  <div class="water"></div>
+
+
+  <div class="heroMark">
+    FUNFINS
   </div>
-  <div class="scroll">SCROLL TO EXPLORE ↓</div>
+
+
+  <div class="heroCopy">
+
+    <small>
+      FUNFINS + DIVE GEAR
+    </small>
+
+
+    <h1>
+      GO
+      <br>
+      <em>DEEPER.</em>
+    </h1>
+
+
+    <p>
+      Precision long-blade fiberglass for divers who want
+      smooth movement, balanced performance and controlled
+      propulsion.
+    </p>
+
+
+    <a
+      class="btn"
+      href="#shop"
+    >
+      SHOP THE BLADE ↗
+    </a>
+
+  </div>
+
+
+  <div class="scroll">
+    SCROLL TO EXPLORE ↓
+  </div>
+
 </section>
 
-<section id="shop" class="productFeature">
+
+
+<!-- =========================================================
+     PRODUCT
+========================================================= -->
+
+<section
+  id="shop"
+  class="productFeature"
+>
+
+
+  <!-- PRODUCT IMAGE -->
+
   <div class="productPhoto">
-    <img src="funfins-type2-red-ferrari.jpg" alt="FUNFINS+ Rounded / Smooth Blade Only">
-    <span>FUNFINS+ / ROUNDED / SMOOTH</span>
+
+    <img
+      id="mainProductImage"
+      src="funfins-type2-red-ferrari.jpg"
+      alt="FUNFINS+ Rounded / Smooth Red Ferrari"
+    >
+
+
+    <span>
+      FUNFINS+ / ROUNDED / SMOOTH
+    </span>
+
   </div>
+
+
+
+  <!-- PRODUCT INFORMATION -->
+
   <div class="productCopy">
-    <small>01 — THE FIRST DROP</small>
-    <h2>FUNFINS+<br><em>ROUNDED / SMOOTH BLADE ONLY.</em></h2>
-    <p class="lead">RED FERRARI</p>
-    <p>Long blade fiberglass with a Medium stiffness profile, made for divers who want a balanced feel between flex, control and power.</p>
+
+
+    <small>
+      01 — THE SECOND DROP
+    </small>
+
+
+    <h2>
+      FUNFINS+
+      <br>
+      <em>ROUNDED / SMOOTH BLADE ONLY.</em>
+    </h2>
+
+
+    <p class="lead">
+      ROUNDED / SMOOTH
+    </p>
+
+
+    <p>
+      The Rounded / Smooth Blade is designed for fluid movement
+      and balanced performance. Its smooth, rounded profile
+      provides a gentle and controlled flex, allowing each kick
+      to feel natural, stable, and effortless.
+    </p>
+
+
+    <p>
+      Built for divers who value comfort and consistency,
+      it delivers smooth propulsion while maintaining reliable
+      control throughout every movement.
+    </p>
+
+
+
+    <!-- =====================================================
+         VARIANTS
+    ====================================================== -->
 
     <div class="variantBox">
+
+
+      <!-- COLOR -->
+
       <div class="variantGroup colorGroup">
+
         <div class="variantLabel">
-          <span>COLOR</span>
-          <b id="colorValue">RED FERRARI</b>
+
+          <span>
+            COLOR
+          </span>
+
+          <b id="colorValue">
+            RED FERRARI
+          </b>
+
         </div>
+
 
         <div class="colorOptions">
-          <button class="colorOption active" data-color="Red Ferrari" data-image="funfins-type2-red-ferrari.jpg">
-            <img src="funfins-type2-red-ferrari.jpg" alt="Red Ferrari">
-            <span>RED FERRARI</span>
+
+
+          <button
+            class="colorOption active"
+            data-color="Red Ferrari"
+            data-image="funfins-type2-red-ferrari.jpg"
+            type="button"
+          >
+
+            <img
+              src="funfins-type2-red-ferrari.jpg"
+              alt="Red Ferrari"
+            >
+
+            <span>
+              RED FERRARI
+            </span>
+
           </button>
-          <button class="colorOption" data-color="Black" data-image="funfins-type2-black.jpg">
-            <img src="funfins-type2-black.jpg" alt="Black">
-            <span>BLACK</span>
+
+
+
+          <button
+            class="colorOption"
+            data-color="Black"
+            data-image="funfins-type2-black.jpg"
+            type="button"
+          >
+
+            <img
+              src="funfins-type2-black.jpg"
+              alt="Black"
+            >
+
+            <span>
+              BLACK
+            </span>
+
           </button>
-          <button class="colorOption" data-color="Ocean Blue" data-image="funfins-type2-ocean-blue.jpg">
-            <img src="funfins-type2-ocean-blue.jpg" alt="Ocean Blue">
-            <span>OCEAN BLUE</span>
+
+
+
+          <button
+            class="colorOption"
+            data-color="Ocean Blue"
+            data-image="funfins-type2-ocean-blue.jpg"
+            type="button"
+          >
+
+            <img
+              src="funfins-type2-ocean-blue.jpg"
+              alt="Ocean Blue"
+            >
+
+            <span>
+              OCEAN BLUE
+            </span>
+
           </button>
-          <button class="colorOption" data-color="Forest Green" data-image="funfins-type2-forest-green.jpg">
-            <img src="funfins-type2-forest-green.jpg" alt="Forest Green">
-            <span>FOREST GREEN</span>
+
+
+
+          <button
+            class="colorOption"
+            data-color="Forest Green"
+            data-image="funfins-type2-forest-green.jpg"
+            type="button"
+          >
+
+            <img
+              src="funfins-type2-forest-green.jpg"
+              alt="Forest Green"
+            >
+
+            <span>
+              FOREST GREEN
+            </span>
+
           </button>
-          <button class="colorOption" data-color="Pearl White" data-image="funfins-type2-pearl-white.jpg">
-            <img src="funfins-type2-pearl-white.jpg" alt="Pearl White">
-            <span>PEARL WHITE</span>
+
+
+
+          <button
+            class="colorOption"
+            data-color="Pearl White"
+            data-image="funfins-type2-pearl-white.jpg"
+            type="button"
+          >
+
+            <img
+              src="funfins-type2-pearl-white.jpg"
+              alt="Pearl White"
+            >
+
+            <span>
+              PEARL WHITE
+            </span>
+
           </button>
-          <button class="colorOption" data-color="Sun Yellow" data-image="funfins-type2-sun-yellow.jpg">
-            <img src="funfins-type2-sun-yellow.jpg" alt="Sun Yellow">
-            <span>SUN YELLOW</span>
+
+
+
+          <button
+            class="colorOption"
+            data-color="Sun Yellow"
+            data-image="funfins-type2-sun-yellow.jpg"
+            type="button"
+          >
+
+            <img
+              src="funfins-type2-sun-yellow.jpg"
+              alt="Sun Yellow"
+            >
+
+            <span>
+              SUN YELLOW
+            </span>
+
           </button>
+
+
         </div>
+
       </div>
 
-      <div class="variantGroup">
-        <div class="variantLabel">
-          <span>RAIL</span>
-          <b id="railValue">WATER RAILS</b>
-        </div>
 
-        <div class="variantOptions">
-          <button class="variantOption active" data-rail="Water Rails" data-price="1500000">
+
+      <!-- RAIL -->
+
+      <div class="variantGroup">
+
+        <div class="variantLabel">
+
+          <span>
+            RAIL
+          </span>
+
+          <b id="railValue">
             WATER RAILS
-            <small>Rp 1.500.000</small>
-          </button>
+          </b>
 
-          <button class="variantOption" data-rail="U-List" data-price="1000000">
-            U-LIST
-            <small>Rp 1.000.000</small>
-          </button>
         </div>
-      </div>
 
-      <div class="variantGroup">
-        <div class="variantLabel">
-          <span>STIFFNESS</span>
-          <b id="stiffnessValue">MEDIUM</b>
-        </div>
 
         <div class="variantOptions">
-          <button class="stiffnessOption active" data-stiffness="Medium">
+
+
+          <button
+            class="variantOption active"
+            data-rail="Water Rails"
+            data-price="1500000"
+            type="button"
+          >
+
+            WATER RAILS
+
+            <small>
+              Rp 1.500.000
+            </small>
+
+          </button>
+
+
+
+          <button
+            class="variantOption"
+            data-rail="U-List"
+            data-price="1000000"
+            type="button"
+          >
+
+            U-LIST
+
+            <small>
+              Rp 1.000.000
+            </small>
+
+          </button>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- STIFFNESS -->
+
+      <div class="variantGroup">
+
+        <div class="variantLabel">
+
+          <span>
+            STIFFNESS
+          </span>
+
+          <b id="stiffnessValue">
+            MEDIUM
+          </b>
+
+        </div>
+
+
+        <div class="variantOptions">
+
+
+          <button
+            class="stiffnessOption active"
+            data-stiffness="Medium"
+            type="button"
+          >
             MEDIUM
           </button>
 
-          <button class="stiffnessOption" data-stiffness="Soft">
+
+          <button
+            class="stiffnessOption"
+            data-stiffness="Soft"
+            type="button"
+          >
             SOFT
           </button>
+
+
         </div>
+
       </div>
+
+
     </div>
+
+
+
+    <!-- =====================================================
+         SPECS
+    ====================================================== -->
 
     <div class="specGrid">
-      <div><small>MATERIAL</small><b>FIBERGLASS</b></div>
-      <div><small>BLADE LENGTH</small><b>80 CM</b></div>
-      <div><small>STIFFNESS</small><b>MEDIUM</b></div>
-      <div><small>COLOR</small><b id="specColor">RED FERRARI</b></div>
-      <div><small>FOOTPOCKET</small><b>NOT INCLUDED</b></div>
-      <div><small>TYPE</small><b>BLADE ONLY</b></div>
+
+
+      <div>
+
+        <small>
+          MATERIAL
+        </small>
+
+        <b>
+          FIBERGLASS
+        </b>
+
+      </div>
+
+
+      <div>
+
+        <small>
+          BLADE LENGTH
+        </small>
+
+        <b>
+          80 CM
+        </b>
+
+      </div>
+
+
+      <div>
+
+        <small>
+          STIFFNESS
+        </small>
+
+        <b id="specStiffness">
+          MEDIUM
+        </b>
+
+      </div>
+
+
+      <div>
+
+        <small>
+          COLOR
+        </small>
+
+        <b id="specColor">
+          RED FERRARI
+        </b>
+
+      </div>
+
+
+      <div>
+
+        <small>
+          FOOTPOCKET
+        </small>
+
+        <b>
+          NOT INCLUDED
+        </b>
+
+      </div>
+
+
+      <div>
+
+        <small>
+          TYPE
+        </small>
+
+        <b>
+          BLADE ONLY
+        </b>
+
+      </div>
+
+
     </div>
-    <div class="buyRow"><div class="price">Rp 1.500.000</div><button class="buyBtn" id="checkoutBtn">CHECKOUT VIA WHATSAPP ↗</button></div>
+
+
+
+    <!-- =====================================================
+         BUY
+    ====================================================== -->
+
+    <div class="buyRow">
+
+      <div class="price">
+        Rp 1.500.000
+      </div>
+
+
+      <button
+        class="buyBtn"
+        id="checkoutBtn"
+        type="button"
+      >
+        CHECKOUT VIA WHATSAPP ↗
+      </button>
+
+    </div>
+
+
   </div>
+
 </section>
 
-<section id="details" class="light details">
-  <small>02 — PRODUCT DETAILS</small>
-  <div><h2>BUILT TO<br><em>MOVE.</em></h2><div>
-    <p>FUNFINS+ Rounded / Smooth Blade Only is an 80 cm fiberglass long blade with Medium stiffness.</p>
-    <p>The blade is sold separately without a footpocket, giving you the freedom to pair it with a compatible footpocket according to your setup and preference.</p>
-  </div></div>
+
+
+<!-- =========================================================
+     02 — PRODUCT DETAILS
+========================================================= -->
+
+<section
+  id="details"
+  class="light details"
+>
+
+
+  <small>
+    02 — PRODUCT DETAILS
+  </small>
+
+
+  <div>
+
+    <h2>
+      BUILT TO
+      <br>
+      <em>FLOW.</em>
+    </h2>
+
+
+    <div>
+
+      <p>
+
+        <strong>
+          FUNFINS+ ROUNDED / SMOOTH BLADE.
+        </strong>
+
+        The Rounded / Smooth Blade is designed for fluid
+        movement and balanced performance. Its smooth,
+        rounded profile provides a gentle and controlled
+        flex, allowing each kick to feel natural, stable,
+        and effortless.
+
+      </p>
+
+
+      <p>
+
+        Built for divers who value comfort and consistency,
+        it delivers smooth propulsion while maintaining
+        reliable control throughout every movement.
+
+      </p>
+
+
+      <p>
+
+        The blade is sold separately without a footpocket,
+        giving you the freedom to pair it with a compatible
+        footpocket according to your setup and preference.
+
+      </p>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+
+<!-- =========================================================
+     03 — FIN SHAPE / FUNCTION & PERFORMANCE
+========================================================= -->
 
 <section class="shapeDetails light">
-  <small>03 — FIN SHAPE / FUNCTION &amp; ADVANTAGES</small>
+
+
+  <small>
+    03 — FIN SHAPE / FUNCTION &amp; PERFORMANCE
+  </small>
+
+
+
+  <!-- =======================================================
+       INTRO
+  ======================================================== -->
 
   <div class="shapeIntro">
-    <h2>ROUNDED / SMOOTH<br><em>BALANCE + COMFORT.</em></h2>
-    <p>The second design has a more rounded and smooth upper profile. This shape can be positioned as an all-round blade design.</p>
+
+    <h2>
+      ROUNDED / SMOOTH
+      <br>
+      <em>BALANCE + COMFORT.</em>
+    </h2>
+
+
+    <p>
+
+      The Rounded / Smooth Blade is designed for fluid movement
+      and balanced performance. Its smooth, rounded profile
+      provides a gentle and controlled flex, allowing each kick
+      to feel natural, stable, and effortless.
+
+    </p>
+
+
+    <p>
+
+      Built for divers who value comfort and consistency,
+      it delivers smooth propulsion while maintaining reliable
+      control throughout every movement.
+
+    </p>
+
   </div>
 
-  <div class="shapeGrid">
-    <div class="shapeBlock">
-      <span>CHARACTERISTICS</span>
-      <ul>
-        <li>More gradual flex distribution.</li><li>Smooth kicking sensation.</li><li>Less aggressive than the Wave design.</li><li>Suitable for general-purpose use.</li>
-      </ul>
+
+
+  <!-- =======================================================
+       CHARACTERISTICS
+  ======================================================== -->
+
+  <div class="detailSection">
+
+
+    <div class="detailSectionHeader">
+
+      <span>
+        01 — CHARACTERISTICS
+      </span>
+
+      <h3>
+        ROUNDED / SMOOTH
+      </h3>
+
     </div>
 
-    <div class="shapeBlock">
-      <span>ADVANTAGES</span>
-      <ul>
-        <li>Smooth kicking</li><li>Easy to control</li><li>Suitable for cruising and longer-distance diving</li><li>More forgiving of variations in kicking technique</li><li>Good for divers who do not always kick with high power.</li>
-      </ul>
+
+    <div class="detailList">
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          01
+        </span>
+
+        <div>
+
+          <h4>
+            SMOOTH FLEX
+          </h4>
+
+          <p>
+            Provides a fluid and gradual flex throughout
+            each kick.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          02
+        </span>
+
+        <div>
+
+          <h4>
+            BALANCED
+          </h4>
+
+          <p>
+            Delivers a well-balanced combination of power,
+            control, and comfort.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          03
+        </span>
+
+        <div>
+
+          <h4>
+            STABLE
+          </h4>
+
+          <p>
+            Maintains consistent blade movement for a
+            predictable kicking experience.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          04
+        </span>
+
+        <div>
+
+          <h4>
+            COMFORTABLE KICK FEEL
+          </h4>
+
+          <p>
+            Offers a smooth and natural sensation with
+            less aggressive feedback.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          05
+        </span>
+
+        <div>
+
+          <h4>
+            EASY CONTROL
+          </h4>
+
+          <p>
+            Allows divers to maintain control with minimal
+            adjustment to their kicking technique.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          06
+        </span>
+
+        <div>
+
+          <h4>
+            VERSATILE PERFORMANCE
+          </h4>
+
+          <p>
+            Suitable for different diving styles, speeds,
+            and experience levels.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          07
+        </span>
+
+        <div>
+
+          <h4>
+            CONSISTENT RECOVERY
+          </h4>
+
+          <p>
+            Returns smoothly after each kick, creating
+            a steady and repeatable kicking cycle.
+          </p>
+
+        </div>
+
+      </div>
+
+
     </div>
+
   </div>
+
+
+
+  <!-- =======================================================
+       ADVANTAGES
+  ======================================================== -->
+
+  <div class="detailSection advantagesSection">
+
+
+    <div class="detailSectionHeader">
+
+      <span>
+        02 — ADVANTAGES
+      </span>
+
+      <h3>
+        ROUNDED / SMOOTH
+      </h3>
+
+    </div>
+
+
+    <div class="detailList">
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          01
+        </span>
+
+        <div>
+
+          <h4>
+            SMOOTH RESPONSE
+          </h4>
+
+          <p>
+            Provides a fluid and predictable response with
+            every kick.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          02
+        </span>
+
+        <div>
+
+          <h4>
+            EFFORTLESS PROPULSION
+          </h4>
+
+          <p>
+            Generates steady forward thrust without requiring
+            aggressive kicking.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          03
+        </span>
+
+        <div>
+
+          <h4>
+            REDUCED LEG STRAIN
+          </h4>
+
+          <p>
+            The smooth flex can help create a more comfortable
+            kicking experience during longer sessions.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          04
+        </span>
+
+        <div>
+
+          <h4>
+            CONSISTENT PERFORMANCE
+          </h4>
+
+          <p>
+            Maintains a stable and predictable feel throughout
+            repetitive kicking.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          05
+        </span>
+
+        <div>
+
+          <h4>
+            EASY MANEUVERABILITY
+          </h4>
+
+          <p>
+            Offers controlled blade movement for smooth
+            directional changes.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          06
+        </span>
+
+        <div>
+
+          <h4>
+            FORGIVING FEEL
+          </h4>
+
+          <p>
+            Suitable for divers who prefer a softer and
+            more relaxed kicking style.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          07
+        </span>
+
+        <div>
+
+          <h4>
+            ALL-ROUND PERFORMANCE
+          </h4>
+
+          <p>
+            Versatile enough for recreational diving,
+            training, and extended underwater sessions.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =======================================================
+       POTENTIAL DRAWBACKS
+  ======================================================== -->
+
+  <div class="detailSection drawbacksSection">
+
+
+    <div class="detailSectionHeader">
+
+      <span>
+        03 — POTENTIAL DRAWBACKS
+      </span>
+
+      <h3>
+        ROUNDED / SMOOTH
+      </h3>
+
+    </div>
+
+
+    <div class="detailList">
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          01
+        </span>
+
+        <div>
+
+          <h4>
+            LESS AGGRESSIVE RESPONSE
+          </h4>
+
+          <p>
+            May feel less powerful or explosive compared
+            with a more aggressive blade profile.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          02
+        </span>
+
+        <div>
+
+          <h4>
+            SLOWER ACCELERATION
+          </h4>
+
+          <p>
+            May require more effort to achieve rapid bursts
+            of speed.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          03
+        </span>
+
+        <div>
+
+          <h4>
+            LOWER PEAK POWER FEEL
+          </h4>
+
+          <p>
+            May not provide the same direct power sensation
+            preferred by strong kickers.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          04
+        </span>
+
+        <div>
+
+          <h4>
+            LESS DYNAMIC
+          </h4>
+
+          <p>
+            Can feel less responsive during highly aggressive
+            or fast-paced kicking.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          05
+        </span>
+
+        <div>
+
+          <h4>
+            TECHNIQUE DEPENDENT
+          </h4>
+
+          <p>
+            Performance still varies depending on blade
+            stiffness and the diver's kicking technique.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          06
+        </span>
+
+        <div>
+
+          <h4>
+            MAY FEEL TOO SOFT
+          </h4>
+
+          <p>
+            Divers who prefer a stiff and highly reactive
+            blade may find the smooth flex less engaging.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =======================================================
+       SIMPLE POSITIONING
+  ======================================================== -->
 
   <div class="shapePositioning">
-    <span>SIMPLE POSITIONING</span>
-    <h3>BALANCE + COMFORT</h3>
-    <p>Smooth flex, balanced performance, versatile kicking.</p>
+
+
+    <span>
+      SIMPLE POSITIONING
+    </span>
+
+
+    <h3>
+      BALANCE + COMFORT
+    </h3>
+
+
+    <p>
+      Smooth flex, balanced performance, comfortable kicking.
+    </p>
+
   </div>
+
+
+
+  <!-- =======================================================
+       IMPORTANT NOTE
+  ======================================================== -->
 
   <div class="importantNote">
-    <span>IMPORTANT NOTE</span>
+
+
+    <span>
+      IMPORTANT NOTE
+    </span>
+
+
     <p>
-      The blade shape alone does not determine the final performance of the fins.
-      The actual feel and performance are also strongly influenced by material,
-      blade thickness, number of laminate layers, fiber orientation, rails,
-      foot pocket, blade length, blade width, taper, and flex zone position and length.
+      The blade shape alone does not determine the final
+      performance of the fins.
     </p>
+
+
+    <p>
+      The actual feel and performance are also strongly
+      influenced by:
+    </p>
+
+
+    <div class="influenceGrid">
+
+      <span>
+        MATERIAL
+      </span>
+
+      <span>
+        BLADE THICKNESS
+      </span>
+
+      <span>
+        LAMINATE LAYERS
+      </span>
+
+      <span>
+        FIBER ORIENTATION
+      </span>
+
+      <span>
+        RAILS
+      </span>
+
+      <span>
+        FOOTPOCKET
+      </span>
+
+      <span>
+        BLADE LENGTH
+      </span>
+
+      <span>
+        BLADE WIDTH
+      </span>
+
+      <span>
+        TAPER
+      </span>
+
+      <span>
+        FLEX ZONE
+      </span>
+
+    </div>
+
+
   </div>
+
+
+
+  <!-- =======================================================
+       PRODUCT POSITIONING
+  ======================================================== -->
 
   <div class="productPositioning">
-    <span>PRODUCT POSITIONING</span>
+
+
+    <span>
+      PRODUCT POSITIONING
+    </span>
+
+
     <div class="positionTable">
-      <div><b>MODEL</b><b>FOCUS</b><b>FEEL</b><b>SUITABLE FOR</b></div>
-      <div><span>Wave</span><span>Power &amp; Response</span><span>⚡ Aggressive</span><span>Experienced divers / powerful kickers</span></div>
-      <div><span>Rounded</span><span>Balance</span><span>🌊 Smooth</span><span>All-round / recreational diving</span></div>
-      <div><span>Bulb</span><span>Efficiency</span><span>🧘 Controlled</span><span>Long sessions / efficient kicking</span></div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="head"><div><small>04 — THE PHILOSOPHY</small><h2>FEEL THE<br><em>WATER.</em></h2></div></div>
-  <div class="philosophy">
-    <div><b>01</b><h3>CONTROL</h3><p>Medium stiffness for a balanced blade response.</p></div>
-    <div><b>02</b><h3>EFFICIENCY</h3><p>80 cm long-blade geometry for deliberate underwater movement.</p></div>
-    <div><b>03</b><h3>CHARACTER</h3><p>Six color options — made to stand out above and below the surface.</p></div>
-  </div>
-</section>
 
-<section id="story" class="story"><div class="storyInner">
-  <small>05 — FUNFINS+</small><h2>BUILT FOR<br>THE ONES WHO<br><em>GO DEEPER.</em></h2>
-  <p>FUNFINS+ is built around a simple idea: your equipment should help you move with intention. Start with the blade, learn the water, and make every kick count.</p>
-</div></section>
+      <div>
 
-<section id="contact" class="newsletter">
-  <small>06 — ORDER / CONTACT</small><h2>READY TO<br><em>GO DEEPER?</em></h2>
-  <p>Order the Rounded / Smooth blade directly through WhatsApp.</p>
-  <a class="btn" href="https://wa.me/6289638142670?text=Halo%20FUNFINS,%20saya%20tertarik%20FUNFINS%2B%20Rounded%20%2F%20Smooth%20Blade%20Only." target="_blank">ORDER VIA WHATSAPP ↗</a>
-</section>
-</main>
+        <b>
+          MODEL
+        </b>
 
-<footer>
-  <div class="logo">FUNFINS<span>+</span><small>DIVE GEAR</small></div>
-  <div><a href="#shop">SHOP</a><a href="#details">DETAILS</a><a href="#story">ABOUT</a><a href="#contact">CONTACT</a></div>
-  <small>© 2026 FUNFINS + DIVE GEAR</small>
-</footer>
+        <b>
+          FOCUS
+        </b>
 
-<div id="orderModal" class="orderModal">
-  <div class="orderPanel">
-    <button class="orderClose" id="orderClose" aria-label="Close">×</button>
+        <b>
+          FEEL
+        </b>
 
-    <small>ORDER CONFIRMATION</small>
-    <h3>YOUR<br><em>ORDER.</em></h3>
+        <b>
+          SUITABLE FOR
+        </b>
 
-    <div class="orderSummary">
-      <div class="summaryImage">
-        <img src="funfins-type2-red-ferrari.jpg" alt="FUNFINS+ Rounded / Smooth Blade Only">
       </div>
 
-      <div class="summaryInfo">
-        <b>FUNFINS+ Blade Only<br>(Rounded / Smooth)</b>
 
-        <div class="summaryLine">
-          <span>Rail</span>
-          <strong id="summaryRail">Water Rails</strong>
-        </div>
 
-        <div class="summaryLine">
-          <span>Stiffness</span>
-          <strong id="summaryStiffness">Medium</strong>
-        </div>
+      <div>
 
-        <div class="summaryLine">
-          <span>Color</span>
-          <strong id="summaryColor">Red Ferrari</strong>
-        </div>
+        <span>
+          Wave
+        </span>
 
-        <div class="summaryLine">
-          <span>Quantity</span>
-          <div class="qty">
-            <button id="qtyMinus">−</button>
-            <strong id="summaryQty">1</strong>
-            <button id="qtyPlus">+</button>
+        <span>
+          Power &amp; Response
+        </span>
+
+        <span>
+          ⚡ Aggressive
+        </span>
+
+        <span>
+          Experienced divers / powerful kickers
+        </span>
+
+      </div>
+
+
+
+      <div>
+
+        <span>
+          Rounded
+        </span>
+
+        <span>
+          Balance
+        </span>
+
+        <span>
+          🌊 Smooth
+        </span>
+
+        <span>
+          All-round / recreational diving
+        </span>
+
+      </div>
+
+
+
+      <div>
+
+        <span>
+          Bulb
+        </span>
+
+        <span>
+          Efficiency
+        </span>
+
+        <span>
+          🧘 Controlled
+        </span>
+
+        <span>
+          Long sessions / efficient kicking
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     04 — FEEL THE FLOW
+========================================================= -->
+
+<section class="powerSection">
+
+
+  <!-- =======================================================
+       HEADLINE
+  ======================================================== -->
+
+  <div class="powerHero">
+
+
+    <div class="powerHeroCopy">
+
+
+      <span class="powerEyebrow">
+        DESIGNED FOR A DEEPER YOU
+      </span>
+
+
+      <h2>
+        FEEL THE
+        <br>
+        <em>FLOW.</em>
+      </h2>
+
+
+      <p class="powerSubtitle">
+        SMOOTH BY DESIGN.
+        NATURAL IN EVERY KICK.
+      </p>
+
+
+      <div class="powerLine"></div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN PRODUCT VISUAL
+    ====================================================== -->
+
+    <div class="powerHeroVisual">
+
+
+      <img
+        class="powerHeroImage"
+        src="funfins-type2-ocean-blue.jpg"
+        alt="FUNFINS+ Rounded / Smooth Ocean Blue blade"
+      >
+
+
+      <img
+        class="powerHeroProduct"
+        src="funfins-type2-red-ferrari.jpg"
+        alt="FUNFINS+ Rounded / Smooth Red Ferrari blade"
+      >
+
+
+      <span class="powerHeroLabel">
+        ROUNDED / SMOOTH
+        &nbsp; — &nbsp;
+        BLADE SERIES
+      </span>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =======================================================
+       THREE VISUAL CARDS
+  ======================================================== -->
+
+  <div class="powerCards">
+
+
+    <!-- =====================================================
+         01 — CONTROL
+    ====================================================== -->
+
+    <article class="powerCard">
+
+
+      <img
+        class="powerCardImage"
+        src="funfins-type2-black.jpg"
+        alt="FUNFINS+ Rounded / Smooth Black blade"
+      >
+
+
+      <div class="powerCardContent">
+
+
+        <div class="powerCardTop">
+
+
+          <div class="powerNumber">
+            01
           </div>
+
+
+          <div class="powerCardMicro">
+            SMOOTH RESPONSE
+            <br>
+            EASY CONTROL
+          </div>
+
+
         </div>
 
-        <div class="summaryTotal">
-          <span>TOTAL</span>
-          <strong id="summaryTotal">Rp 1.500.000</strong>
+
+        <div class="powerCardBottom">
+
+
+          <span class="powerCardLabel">
+            CONTROL
+          </span>
+
+
+          <h3>
+            BALANCED
+            <br>
+            FLEX
+          </h3>
+
+
+          <p>
+            A smooth rounded profile designed for predictable
+            and controlled blade movement. Provides a balanced
+            response that feels natural and easy to manage
+            with every kick.
+          </p>
+
+
+          <span class="powerTag">
+            SMOOTH RESPONSE
+            •
+            EASY CONTROL
+          </span>
+
+
         </div>
+
+
       </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         02 — EFFICIENCY
+    ====================================================== -->
+
+    <article class="powerCard">
+
+
+      <img
+        class="powerCardImage"
+        src="funfins-type2-ocean-blue.jpg"
+        alt="FUNFINS+ Rounded / Smooth Ocean Blue blade"
+      >
+
+
+      <div class="powerCardContent">
+
+
+        <div class="powerCardTop">
+
+
+          <div class="powerNumber">
+            02
+          </div>
+
+
+          <div class="powerCardMicro">
+            STEADY THRUST
+            <br>
+            LESS STRAIN
+          </div>
+
+
+        </div>
+
+
+        <div class="powerCardBottom">
+
+
+          <span class="powerCardLabel">
+            EFFICIENCY
+          </span>
+
+
+          <h3>
+            EFFORTLESS
+            <br>
+            PROPULSION
+          </h3>
+
+
+          <p>
+            A fluid blade profile designed for smooth energy
+            transfer and consistent forward movement. Helps
+            maintain momentum with less aggressive kicking.
+          </p>
+
+
+          <span class="powerTag">
+            STEADY THRUST
+            •
+            LESS STRAIN
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+    <!-- =====================================================
+         03 — CHARACTER
+    ====================================================== -->
+
+    <article class="powerCard">
+
+
+      <img
+        class="powerCardImage"
+        src="funfins-type2-red-ferrari.jpg"
+        alt="FUNFINS+ Rounded / Smooth Red Ferrari blade"
+      >
+
+
+      <div class="powerCardContent">
+
+
+        <div class="powerCardTop">
+
+
+          <div class="powerNumber">
+            03
+          </div>
+
+
+          <div class="powerCardMicro">
+            COMFORTABLE FEEL
+            <br>
+            VERSATILE PERFORMANCE
+          </div>
+
+
+        </div>
+
+
+        <div class="powerCardBottom">
+
+
+          <span class="powerCardLabel">
+            CHARACTER
+          </span>
+
+
+          <h3>
+            SMOOTH
+            <br>
+            &amp; VERSATILE
+          </h3>
+
+
+          <p>
+            A clean, rounded silhouette built for comfort,
+            consistency, and versatility. Designed for divers
+            who prefer a smooth and relaxed kicking experience.
+          </p>
+
+
+          <span class="powerTag">
+            COMFORTABLE FEEL
+            •
+            VERSATILE PERFORMANCE
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+
+  <!-- =======================================================
+       BOTTOM TAGLINE
+  ======================================================== -->
+
+  <div class="powerFooter">
+
+
+    <strong>
+      SMOOTH BY DESIGN
+      &nbsp; / &nbsp;
+      NATURAL IN EVERY KICK
+    </strong>
+
+
+    <div class="powerFooterRight">
+
+      <span>
+        ROUNDED / SMOOTH —
+        BUILT FOR EVERY KICK.
+      </span>
+
     </div>
 
-    <p class="orderNote">
-      Setelah menekan tombol di bawah, WhatsApp akan terbuka dengan
-      rangkuman pesanan ini. Anda dapat mengonfirmasi pesanan langsung
-      dengan FUNFINS.
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     05 — STORY
+========================================================= -->
+
+<section
+  id="story"
+  class="story"
+>
+
+
+  <div class="storyInner">
+
+
+    <small>
+      05 — FUNFINS+
+    </small>
+
+
+    <h2>
+      BUILT FOR
+      <br>
+      THE ONES WHO
+      <br>
+      <em>GO DEEPER.</em>
+    </h2>
+
+
+    <p>
+      FUNFINS+ is built around a simple idea:
+      your equipment should help you move with intention.
     </p>
 
-    <button class="confirmOrder" id="confirmOrder">
+
+    <p>
+      Start with the blade, learn the water,
+      and make every kick count.
+    </p>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     06 — CONTACT
+========================================================= -->
+
+<section
+  id="contact"
+  class="newsletter"
+>
+
+
+  <small>
+    06 — ORDER / CONTACT
+  </small>
+
+
+  <h2>
+    READY TO
+    <br>
+    <em>GO DEEPER?</em>
+  </h2>
+
+
+  <p>
+    Order the Rounded / Smooth blade directly through WhatsApp.
+  </p>
+
+
+  <a
+    class="btn"
+    href="https://wa.me/6289638142670?text=Halo%20FUNFINS,%20saya%20tertarik%20FUNFINS%2B%20Rounded%20%2F%20Smooth%20Blade%20Only."
+    target="_blank"
+    rel="noopener"
+  >
+    ORDER VIA WHATSAPP ↗
+  </a>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+  <div class="logo">
+
+    FUNFINS<span>+</span>
+
+    <small>
+      DIVE GEAR
+    </small>
+
+  </div>
+
+
+  <div>
+
+    <a href="#shop">
+      SHOP
+    </a>
+
+    <a href="#details">
+      DETAILS
+    </a>
+
+    <a href="#story">
+      ABOUT
+    </a>
+
+    <a href="#contact">
+      CONTACT
+    </a>
+
+  </div>
+
+
+  <small>
+    © 2026 FUNFINS + DIVE GEAR
+  </small>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     ORDER MODAL
+========================================================= -->
+
+<div
+  id="orderModal"
+  class="orderModal"
+>
+
+
+  <div class="orderPanel">
+
+
+    <button
+      class="orderClose"
+      id="orderClose"
+      type="button"
+      aria-label="Close order"
+    >
+      ×
+    </button>
+
+
+    <small>
+      ORDER CONFIRMATION
+    </small>
+
+
+    <h3>
+      YOUR
+      <br>
+      <em>ORDER.</em>
+    </h3>
+
+
+
+    <div class="orderSummary">
+
+
+      <div class="summaryImage">
+
+        <img
+          id="summaryImage"
+          src="funfins-type2-red-ferrari.jpg"
+          alt="FUNFINS+ Rounded / Smooth blade"
+        >
+
+      </div>
+
+
+
+      <div class="summaryInfo">
+
+
+        <b id="summaryProduct">
+          FUNFINS+ Rounded / Smooth
+          <br>
+          Blade Only
+        </b>
+
+
+
+        <div class="summaryLine">
+
+          <span>
+            Color
+          </span>
+
+          <strong id="summaryColor">
+            Red Ferrari
+          </strong>
+
+        </div>
+
+
+
+        <div class="summaryLine">
+
+          <span>
+            Rail
+          </span>
+
+          <strong id="summaryRail">
+            Water Rails
+          </strong>
+
+        </div>
+
+
+
+        <div class="summaryLine">
+
+          <span>
+            Stiffness
+          </span>
+
+          <strong id="summaryStiffness">
+            Medium
+          </strong>
+
+        </div>
+
+
+
+        <div class="summaryLine">
+
+          <span>
+            Quantity
+          </span>
+
+
+          <div class="qty">
+
+            <button
+              id="qtyMinus"
+              type="button"
+            >
+              −
+            </button>
+
+
+            <strong id="summaryQty">
+              1
+            </strong>
+
+
+            <button
+              id="qtyPlus"
+              type="button"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="summaryTotal">
+
+          <span>
+            TOTAL
+          </span>
+
+          <strong id="summaryTotal">
+            Rp 1.500.000
+          </strong>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <p class="orderNote">
+
+      Setelah menekan tombol di bawah, WhatsApp akan terbuka
+      dengan rangkuman pesanan ini. Anda dapat mengonfirmasi
+      pesanan langsung dengan FUNFINS.
+
+    </p>
+
+
+
+    <button
+      class="confirmOrder"
+      id="confirmOrder"
+      type="button"
+    >
       CONFIRM &amp; ORDER VIA WHATSAPP ↗
     </button>
+
+
   </div>
+
 </div>
 
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script src="script.js"></script>
-</body></html>
+
+
+</body>
+
+</html>
