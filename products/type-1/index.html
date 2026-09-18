@@ -34,19 +34,17 @@
 
 
   <!-- =====================================================
-       SECTION 04 VISUAL STYLE
+       SECTION 04 — FEEL THE POWER
+       Additional visual styling
   ====================================================== -->
 
   <style>
-
-    /* =====================================================
-       POWER SECTION
-    ====================================================== */
 
     .powerSection {
       position: relative;
       overflow: hidden;
       padding: 110px 36px 42px;
+
       background:
         radial-gradient(
           circle at 75% 10%,
@@ -81,6 +79,7 @@
     .powerSection::after {
       content: "";
       position: absolute;
+
       width: 900px;
       height: 900px;
 
@@ -98,23 +97,28 @@
     }
 
 
-
     /* =====================================================
        POWER HERO
     ====================================================== */
 
     .powerHero {
       position: relative;
+
       min-height: 430px;
 
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
+
+      grid-template-columns:
+        1fr 1.15fr;
 
       align-items: center;
+
       gap: 30px;
 
       max-width: 1500px;
-      margin: 0 auto 38px;
+
+      margin:
+        0 auto 38px;
 
       z-index: 2;
     }
@@ -133,19 +137,27 @@
 
       margin-bottom: 22px;
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
+
       font-size: 11px;
+
       letter-spacing: .42em;
 
-      color: rgba(255,255,255,.58);
+      color:
+        rgba(255,255,255,.58);
     }
 
 
     .powerHero h2 {
       margin: 0;
 
-      font-size: clamp(68px, 8vw, 145px);
+      font-size:
+        clamp(68px, 8vw, 145px);
+
       line-height: .82;
+
       letter-spacing: -.075em;
 
       font-weight: 800;
@@ -156,6 +168,7 @@
 
     .powerHero h2 em {
       color: #58e1e5;
+
       font-style: normal;
     }
 
@@ -165,13 +178,18 @@
 
       margin-top: 28px;
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
+
       font-size: 12px;
+
       line-height: 1.8;
 
       letter-spacing: .16em;
 
-      color: rgba(255,255,255,.68);
+      color:
+        rgba(255,255,255,.68);
     }
 
 
@@ -185,9 +203,8 @@
     }
 
 
-
     /* =====================================================
-       HERO PRODUCT VISUAL
+       MAIN PRODUCT VISUAL
     ====================================================== */
 
     .powerHeroVisual {
@@ -196,7 +213,9 @@
       min-height: 430px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       overflow: hidden;
@@ -261,11 +280,13 @@
 
       transform: scale(1.04);
 
-      transition: transform 1s ease;
+      transition:
+        transform 1s ease;
     }
 
 
-    .powerHeroVisual:hover .powerHeroImage {
+    .powerHeroVisual:hover
+    .powerHeroImage {
       transform: scale(1.08);
     }
 
@@ -278,7 +299,10 @@
       width: 64%;
 
       filter:
-        drop-shadow(0 25px 40px rgba(0,0,0,.7));
+        drop-shadow(
+          0 25px 40px
+          rgba(0,0,0,.7)
+        );
 
       transform:
         rotate(-5deg)
@@ -296,24 +320,28 @@
 
       z-index: 5;
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
+
       font-size: 9px;
 
       letter-spacing: .34em;
 
-      color: rgba(255,255,255,.58);
+      color:
+        rgba(255,255,255,.58);
 
       writing-mode: vertical-rl;
     }
 
 
-
     /* =====================================================
-       FEATURE CARDS
+       THREE FEATURE CARDS
     ====================================================== */
 
     .powerCards {
       position: relative;
+
       z-index: 5;
 
       display: grid;
@@ -324,6 +352,7 @@
       gap: 20px;
 
       max-width: 1500px;
+
       margin: 0 auto;
     }
 
@@ -335,7 +364,9 @@
 
       overflow: hidden;
 
-      border: 1px solid rgba(95,220,225,.28);
+      border:
+        1px solid
+        rgba(95,220,225,.28);
 
       border-radius: 10px;
 
@@ -348,7 +379,8 @@
 
 
     .powerCard:hover {
-      transform: translateY(-7px);
+      transform:
+        translateY(-7px);
 
       border-color:
         rgba(95,220,225,.72);
@@ -370,6 +402,7 @@
         );
 
       z-index: 2;
+
       pointer-events: none;
     }
 
@@ -396,14 +429,14 @@
     }
 
 
-    .powerCard:hover .powerCardImage {
-      transform: scale(1.055);
+    .powerCard:hover
+    .powerCardImage {
+      transform:
+        scale(1.055);
 
       opacity: .92;
     }
 
-
-    /* individual visual positioning */
 
     .powerCard:nth-child(1)
     .powerCardImage {
@@ -423,7 +456,6 @@
     }
 
 
-
     /* =====================================================
        CARD CONTENT
     ====================================================== */
@@ -435,6 +467,7 @@
       z-index: 4;
 
       display: flex;
+
       flex-direction: column;
 
       justify-content: space-between;
@@ -445,19 +478,26 @@
 
     .powerCardTop {
       display: flex;
+
       justify-content: space-between;
+
       align-items: flex-start;
     }
 
 
     .powerNumber {
       display: flex;
+
       align-items: center;
+
       gap: 14px;
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
 
       font-size: 11px;
+
       letter-spacing: .18em;
 
       color: #54dfe5;
@@ -478,9 +518,12 @@
     .powerCardMicro {
       text-align: right;
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
 
       font-size: 8px;
+
       line-height: 1.8;
 
       letter-spacing: .24em;
@@ -500,7 +543,9 @@
 
       margin-bottom: 9px;
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
 
       font-size: 10px;
 
@@ -512,9 +557,11 @@
 
 
     .powerCard h3 {
-      margin: 0 0 14px;
+      margin:
+        0 0 14px;
 
-      font-size: clamp(29px, 3vw, 46px);
+      font-size:
+        clamp(29px, 3vw, 46px);
 
       line-height: .95;
 
@@ -527,9 +574,11 @@
     .powerCard p {
       max-width: 430px;
 
-      margin: 0 0 24px;
+      margin:
+        0 0 24px;
 
       font-size: 13px;
+
       line-height: 1.75;
 
       color:
@@ -543,9 +592,12 @@
       padding-top: 14px;
 
       border-top:
-        1px solid rgba(84,223,229,.35);
+        1px solid
+        rgba(84,223,229,.35);
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
 
       font-size: 9px;
 
@@ -556,9 +608,8 @@
     }
 
 
-
     /* =====================================================
-       BOTTOM TAGLINE
+       POWER FOOTER
     ====================================================== */
 
     .powerFooter {
@@ -568,7 +619,8 @@
 
       max-width: 1500px;
 
-      margin: 28px auto 0;
+      margin:
+        28px auto 0;
 
       display: flex;
 
@@ -578,7 +630,9 @@
 
       gap: 25px;
 
-      font-family: "DM Mono", monospace;
+      font-family:
+        "DM Mono",
+        monospace;
 
       font-size: 9px;
 
@@ -615,6 +669,323 @@
       background: #55dfe4;
     }
 
+
+    /* =====================================================
+       SECTION 03 DETAIL STYLING
+    ====================================================== */
+
+    .detailSection {
+      margin-top: 90px;
+    }
+
+
+    .detailSectionHeader {
+      display: grid;
+
+      grid-template-columns:
+        .7fr 1.3fr;
+
+      align-items: end;
+
+      gap: 30px;
+
+      padding-bottom: 22px;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.14);
+    }
+
+
+    .detailSectionHeader span {
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 10px;
+
+      letter-spacing: .22em;
+
+      opacity: .58;
+    }
+
+
+    .detailSectionHeader h3 {
+      margin: 0;
+
+      font-size:
+        clamp(32px, 4vw, 58px);
+
+      line-height: .95;
+
+      letter-spacing: -.05em;
+    }
+
+
+    .detailList {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 0 50px;
+    }
+
+
+    .detailItem {
+      display: grid;
+
+      grid-template-columns:
+        46px 1fr;
+
+      gap: 18px;
+
+      padding:
+        25px 0;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.10);
+    }
+
+
+    .detailIndex {
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 10px;
+
+      color:
+        rgba(0,0,0,.42);
+    }
+
+
+    .detailItem h4 {
+      margin:
+        0 0 8px;
+
+      font-size: 15px;
+
+      letter-spacing: .04em;
+    }
+
+
+    .detailItem p {
+      margin: 0;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+
+      opacity: .68;
+    }
+
+
+    .drawbacksSection
+    .detailSectionHeader h3 {
+      color:
+        rgba(0,0,0,.72);
+    }
+
+
+    .shapeNote {
+      margin-top: 55px;
+
+      padding:
+        25px 0;
+
+      border-top:
+        1px solid
+        rgba(0,0,0,.18);
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.18);
+    }
+
+
+    .shapeNote span,
+    .shapePositioning span,
+    .importantNote span,
+    .productPositioning > span {
+      display: block;
+
+      margin-bottom: 15px;
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .22em;
+
+      opacity: .58;
+    }
+
+
+    .shapeNote p {
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+      opacity: .72;
+    }
+
+
+    .shapePositioning {
+      margin-top: 70px;
+
+      padding:
+        45px 0;
+
+      text-align: center;
+
+      border:
+        1px solid
+        rgba(0,0,0,.12);
+    }
+
+
+    .shapePositioning h3 {
+      margin:
+        0 0 12px;
+
+      font-size:
+        clamp(36px, 5vw, 70px);
+
+      letter-spacing:
+        -.055em;
+    }
+
+
+    .shapePositioning p {
+      margin: 0;
+
+      font-size: 14px;
+
+      opacity: .62;
+    }
+
+
+    .importantNote {
+      margin-top: 70px;
+
+      padding:
+        35px;
+
+      background:
+        rgba(0,0,0,.035);
+
+      border:
+        1px solid
+        rgba(0,0,0,.10);
+    }
+
+
+    .importantNote p {
+      max-width: 850px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      opacity: .68;
+    }
+
+
+    .influenceGrid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      gap: 8px;
+
+      margin-top: 25px;
+    }
+
+
+    .influenceGrid span {
+      display: block;
+
+      padding:
+        13px 10px;
+
+      border:
+        1px solid
+        rgba(0,0,0,.10);
+
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 8px;
+
+      letter-spacing: .12em;
+
+      text-align: center;
+
+      opacity: .65;
+    }
+
+
+    .productPositioning {
+      margin-top: 75px;
+    }
+
+
+    .positionTable {
+      border-top:
+        1px solid
+        rgba(0,0,0,.16);
+    }
+
+
+    .positionTable > div {
+      display: grid;
+
+      grid-template-columns:
+        .7fr 1fr 1fr 1.5fr;
+
+      gap: 20px;
+
+      padding:
+        18px 0;
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.10);
+    }
+
+
+    .positionTable b,
+    .positionTable span {
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+
+    .positionTable b {
+      font-family:
+        "DM Mono",
+        monospace;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
+      opacity: .55;
+    }
+
+
+    .positionTable span {
+      opacity: .72;
+    }
 
 
     /* =====================================================
@@ -677,6 +1048,34 @@
         line-height: 1.8;
       }
 
+
+      .detailSectionHeader {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+      }
+
+
+      .detailList {
+        grid-template-columns: 1fr;
+      }
+
+
+      .influenceGrid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+
+      .positionTable {
+        overflow-x: auto;
+      }
+
+
+      .positionTable > div {
+        min-width: 720px;
+      }
+
     }
 
 
@@ -706,6 +1105,16 @@
         font-size: 31px;
       }
 
+
+      .importantNote {
+        padding: 24px 18px;
+      }
+
+
+      .influenceGrid {
+        grid-template-columns: 1fr 1fr;
+      }
+
     }
 
   </style>
@@ -714,7 +1123,6 @@
 
 
 <body>
-
 
 
 <!-- =========================================================
@@ -917,10 +1325,14 @@
 
 
 
-    <!-- COLOR -->
+    <!-- =====================================================
+         VARIANTS
+    ====================================================== -->
 
     <div class="variantBox">
 
+
+      <!-- COLOR -->
 
       <div class="variantGroup colorGroup">
 
@@ -1171,7 +1583,9 @@
 
 
 
-    <!-- SPECS -->
+    <!-- =====================================================
+         SPECS
+    ====================================================== -->
 
     <div class="specGrid">
 
@@ -1258,7 +1672,9 @@
 
 
 
-    <!-- BUY -->
+    <!-- =====================================================
+         BUY
+    ====================================================== -->
 
     <div class="buyRow">
 
@@ -1285,7 +1701,7 @@
 
 
 <!-- =========================================================
-     DETAILS
+     02 — PRODUCT DETAILS
 ========================================================= -->
 
 <section
@@ -1311,25 +1727,34 @@
     <div>
 
       <p>
-        <strong>FUNFINS+ WAVE / NOTCH BLADE.</strong>
-        The Wave / Notch Blade features a distinctive wave/notch
-        upper profile designed to provide a responsive and dynamic
-        kicking experience.
+
+        <strong>
+          FUNFINS+ WAVE / NOTCH BLADE.
+        </strong>
+
+        The Wave / Notch Blade features a distinctive
+        wave/notch upper profile designed to provide a
+        responsive and dynamic kicking experience.
+
       </p>
 
 
       <p>
-        Its unique geometry is designed around responsive flex,
-        direct power transfer and precise blade control, giving
-        the diver a more immediate connection between each kick
-        and forward movement.
+
+        Its unique geometry is designed around responsive
+        flex, direct power transfer and precise blade control,
+        giving the diver a more immediate connection between
+        each kick and forward movement.
+
       </p>
 
 
       <p>
-        The blade is sold separately without a footpocket, giving
-        you the freedom to pair it with a compatible footpocket
-        according to your setup and preference.
+
+        The blade is sold separately without a footpocket,
+        giving you the freedom to pair it with a compatible
+        footpocket according to your setup and preference.
+
       </p>
 
     </div>
@@ -1341,16 +1766,21 @@
 
 
 <!-- =========================================================
-     FIN SHAPE
+     03 — FIN SHAPE / FUNCTION & PERFORMANCE
 ========================================================= -->
 
 <section class="shapeDetails light">
 
 
   <small>
-    03 — FIN SHAPE / FUNCTION &amp; ADVANTAGES
+    03 — FIN SHAPE / FUNCTION &amp; PERFORMANCE
   </small>
 
+
+
+  <!-- =======================================================
+       INTRO
+  ======================================================== -->
 
   <div class="shapeIntro">
 
@@ -1362,101 +1792,565 @@
 
 
     <p>
-      This design features a distinctive wave/notch pattern
-      at the upper section of the blade.
+
+      The distinctive Wave / Notch profile is designed around
+      responsive movement, direct power transfer and an active
+      kicking sensation. Its upper blade geometry gives the
+      product a distinctive character while supporting precise
+      and dynamic underwater movement.
+
     </p>
 
   </div>
 
 
 
-  <div class="shapeGrid">
+  <!-- =======================================================
+       CHARACTERISTICS
+  ======================================================== -->
+
+  <div class="detailSection">
 
 
-    <div class="shapeBlock">
+    <div class="detailSectionHeader">
 
       <span>
-        CHARACTERISTICS
+        01 — CHARACTERISTICS
       </span>
 
-
-      <ul>
-
-        <li>
-          Faster response during kicking.
-        </li>
-
-        <li>
-          More lively blade feel.
-        </li>
-
-        <li>
-          Suitable for frog kicks, dolphin kicks,
-          and quick directional changes.
-        </li>
-
-        <li>
-          Can provide a more direct power response.
-        </li>
-
-      </ul>
+      <h3>
+        NOTCH BLADE
+      </h3>
 
     </div>
 
 
-
-    <div class="shapeBlock">
-
-      <span>
-        ADVANTAGES
-      </span>
+    <div class="detailList">
 
 
-      <ul>
+      <div class="detailItem">
 
-        <li>
-          Highly responsive.
-        </li>
+        <span class="detailIndex">
+          01
+        </span>
 
-        <li>
-          Good power transfer during stronger kicks.
-        </li>
+        <div>
 
-        <li>
-          Good control for active kicking techniques.
-        </li>
+          <h4>
+            RESPONSIVE
+          </h4>
 
-        <li>
-          Quick acceleration.
-        </li>
+          <p>
+            Delivers a quick response to every kick.
+          </p>
 
-      </ul>
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          02
+        </span>
+
+        <div>
+
+          <h4>
+            POWERFUL
+          </h4>
+
+          <p>
+            Generates strong thrust for acceleration and
+            propulsion.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          03
+        </span>
+
+        <div>
+
+          <h4>
+            DYNAMIC FLEX
+          </h4>
+
+          <p>
+            Provides an active flex pattern for a more dynamic
+            blade movement.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          04
+        </span>
+
+        <div>
+
+          <h4>
+            EFFICIENT ENERGY TRANSFER
+          </h4>
+
+          <p>
+            Effectively transfers kicking power into forward
+            propulsion.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          05
+        </span>
+
+        <div>
+
+          <h4>
+            HIGH MANEUVERABILITY
+          </h4>
+
+          <p>
+            Allows easier control during changes in direction
+            and kicking tempo.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          06
+        </span>
+
+        <div>
+
+          <h4>
+            ACTIVE KICK FEEL
+          </h4>
+
+          <p>
+            Provides a more direct and aggressive kicking
+            sensation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          07
+        </span>
+
+        <div>
+
+          <h4>
+            CONTROLLED RECOVERY
+          </h4>
+
+          <p>
+            The blade returns smoothly and responsively,
+            helping prepare for the next kick.
+          </p>
+
+        </div>
+
+      </div>
+
 
     </div>
-
 
   </div>
 
 
 
-  <div class="shapeNote">
+  <!-- =======================================================
+       ADVANTAGES
+  ======================================================== -->
 
-    <span>
-      POTENTIAL DRAWBACK
-    </span>
+  <div class="detailSection advantagesSection">
 
 
-    <p>
-      Can feel more demanding when combined with a stiff blade
-      material. May feel less smooth for relaxed, long-distance
-      kicking compared with a more rounded design.
-    </p>
+    <div class="detailSectionHeader">
+
+      <span>
+        02 — ADVANTAGES
+      </span>
+
+      <h3>
+        NOTCH BLADE
+      </h3>
+
+    </div>
+
+
+    <div class="detailList">
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          01
+        </span>
+
+        <div>
+
+          <h4>
+            FAST RESPONSE
+          </h4>
+
+          <p>
+            Reacts quickly to each kick for a more immediate
+            feel.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          02
+        </span>
+
+        <div>
+
+          <h4>
+            POWERFUL THRUST
+          </h4>
+
+          <p>
+            Delivers strong propulsion with every kick.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          03
+        </span>
+
+        <div>
+
+          <h4>
+            EFFICIENT ENERGY TRANSFER
+          </h4>
+
+          <p>
+            Converts kicking effort into forward movement
+            effectively.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          04
+        </span>
+
+        <div>
+
+          <h4>
+            QUICK ACCELERATION
+          </h4>
+
+          <p>
+            Helps divers build speed efficiently.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          05
+        </span>
+
+        <div>
+
+          <h4>
+            ENHANCED MANEUVERABILITY
+          </h4>
+
+          <p>
+            Provides better control during directional changes.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          06
+        </span>
+
+        <div>
+
+          <h4>
+            DYNAMIC PERFORMANCE
+          </h4>
+
+          <p>
+            Ideal for divers who prefer an active and
+            responsive blade.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          07
+        </span>
+
+        <div>
+
+          <h4>
+            DIRECT POWER DELIVERY
+          </h4>
+
+          <p>
+            Provides a more connected and immediate kicking
+            sensation.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
 
   </div>
 
 
+
+  <!-- =======================================================
+       POTENTIAL DRAWBACKS
+  ======================================================== -->
+
+  <div class="detailSection drawbacksSection">
+
+
+    <div class="detailSectionHeader">
+
+      <span>
+        03 — POTENTIAL DRAWBACKS
+      </span>
+
+      <h3>
+        NOTCH BLADE
+      </h3>
+
+    </div>
+
+
+    <div class="detailList">
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          01
+        </span>
+
+        <div>
+
+          <h4>
+            MORE DEMANDING
+          </h4>
+
+          <p>
+            May require stronger and more consistent kicking
+            technique.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          02
+        </span>
+
+        <div>
+
+          <h4>
+            LESS FORGIVING
+          </h4>
+
+          <p>
+            Can feel less comfortable for beginners or divers
+            with a softer kicking style.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          03
+        </span>
+
+        <div>
+
+          <h4>
+            HIGHER LEG EFFORT
+          </h4>
+
+          <p>
+            Depending on blade stiffness, prolonged use may
+            cause greater leg fatigue.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          04
+        </span>
+
+        <div>
+
+          <h4>
+            LESS SMOOTH AT LOW POWER
+          </h4>
+
+          <p>
+            May not perform as efficiently when kicking at
+            very low intensity.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          05
+        </span>
+
+        <div>
+
+          <h4>
+            TECHNIQUE SENSITIVE
+          </h4>
+
+          <p>
+            Performance can vary more depending on the diver's
+            kicking technique.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="detailItem">
+
+        <span class="detailIndex">
+          06
+        </span>
+
+        <div>
+
+          <h4>
+            POTENTIALLY AGGRESSIVE FEEL
+          </h4>
+
+          <p>
+            The direct response may feel too stiff or aggressive
+            for divers who prefer a soft, relaxed kick.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =======================================================
+       SIMPLE POSITIONING
+  ======================================================== -->
 
   <div class="shapePositioning">
+
 
     <span>
       SIMPLE POSITIONING
@@ -1476,7 +2370,12 @@
 
 
 
+  <!-- =======================================================
+       IMPORTANT NOTE
+  ======================================================== -->
+
   <div class="importantNote">
+
 
     <span>
       IMPORTANT NOTE
@@ -1490,17 +2389,66 @@
 
 
     <p>
-      The actual feel and performance are also strongly influenced
-      by material, blade thickness, number of laminate layers,
-      fiber orientation, rails, foot pocket, blade length,
-      blade width, taper, and flex zone position and length.
+      The actual feel and performance are also strongly
+      influenced by:
     </p>
+
+
+    <div class="influenceGrid">
+
+      <span>
+        MATERIAL
+      </span>
+
+      <span>
+        BLADE THICKNESS
+      </span>
+
+      <span>
+        LAMINATE LAYERS
+      </span>
+
+      <span>
+        FIBER ORIENTATION
+      </span>
+
+      <span>
+        RAILS
+      </span>
+
+      <span>
+        FOOTPOCKET
+      </span>
+
+      <span>
+        BLADE LENGTH
+      </span>
+
+      <span>
+        BLADE WIDTH
+      </span>
+
+      <span>
+        TAPER
+      </span>
+
+      <span>
+        FLEX ZONE
+      </span>
+
+    </div>
+
 
   </div>
 
 
 
+  <!-- =======================================================
+       PRODUCT POSITIONING
+  ======================================================== -->
+
   <div class="productPositioning">
+
 
     <span>
       PRODUCT POSITIONING
@@ -1601,6 +2549,7 @@
 
   </div>
 
+
 </section>
 
 
@@ -1613,7 +2562,7 @@
 
 
   <!-- =======================================================
-       HERO
+       POWER HERO
   ======================================================== -->
 
   <div class="powerHero">
@@ -1647,7 +2596,7 @@
 
 
 
-    <!-- MAIN PRODUCT VISUAL -->
+    <!-- MAIN VISUAL -->
 
     <div class="powerHeroVisual">
 
@@ -1688,7 +2637,7 @@
 
 
     <!-- =====================================================
-         01 CONTROL
+         01 — CONTROL
     ====================================================== -->
 
     <article class="powerCard">
@@ -1761,7 +2710,7 @@
 
 
     <!-- =====================================================
-         02 EFFICIENCY
+         02 — EFFICIENCY
     ====================================================== -->
 
     <article class="powerCard">
@@ -1811,9 +2760,10 @@
 
 
           <p>
-            Engineered to transfer your kicking energy efficiently
-            into forward thrust. Built to help you move with power
-            while maintaining smooth, controlled movement.
+            Engineered to transfer your kicking energy
+            efficiently into forward thrust. Built to help
+            you move with power while maintaining smooth,
+            controlled movement.
           </p>
 
 
@@ -1834,7 +2784,7 @@
 
 
     <!-- =====================================================
-         03 CHARACTER
+         03 — CHARACTER
     ====================================================== -->
 
     <article class="powerCard">
@@ -1941,7 +2891,7 @@
 
 
 <!-- =========================================================
-     STORY
+     05 — STORY
 ========================================================= -->
 
 <section
@@ -1986,7 +2936,7 @@
 
 
 <!-- =========================================================
-     CONTACT
+     06 — CONTACT
 ========================================================= -->
 
 <section
