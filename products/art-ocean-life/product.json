@@ -1,0 +1,25 @@
+{
+  "id": "art-ocean-life",
+  "name": "FUNFINS+ Ocean Life Art Blade",
+  "collection": "ART COLLECTION",
+  "category": "Freediving Blade Only",
+  "artwork": "Ocean Life",
+  "tagline": "ONE ARTWORK. SEVEN PROFILES.",
+  "blade_length_cm": 80,
+  "material": "Fiberglass",
+  "footpocket_size": "-",
+  "stiffness": ["Soft", "Medium"],
+  "rails": {
+    "Water Rails": 1500000,
+    "U-List": 1000000
+  },
+  "profiles": [
+    {"number":1,"name":"Wave / Notch","positioning":"POWER + RESPONSE","image":"images/ocean-life-shape-1.png"},
+    {"number":2,"name":"Rounded / Smooth","positioning":"BALANCE + COMFORT","image":"images/ocean-life-shape-2.png"},
+    {"number":3,"name":"Bulb / Rounded-Lobed","positioning":"STABILITY + EFFICIENCY","image":"images/ocean-life-shape-3.png"},
+    {"number":4,"name":"Crescent / Twin-Notch","positioning":"PRECISION + RESPONSE","image":"images/ocean-life-shape-4.png"},
+    {"number":5,"name":"Wave-S","positioning":"FLOW + RESPONSE","image":"images/ocean-life-shape-5.png"},
+    {"number":6,"name":"V-Cut","positioning":"DIRECT + CONTROLLED","image":"images/ocean-life-shape-6.png"},
+    {"number":7,"name":"Wing / Up-Sweep","positioning":"LIFT + FLOW","image":"images/ocean-life-shape-7.png"}
+  ]
+}
